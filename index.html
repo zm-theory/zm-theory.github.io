@@ -1,124 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Théorie ZM – Cosmologie informationnelle</title>
-  <style>
-    html, body{
-      margin:0, padding:0, height:100%;
-      background:#060813, color:#f2f2f2, font-family:Georgia, serif;
-      overflow-x:hidden;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZM Theory</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+        background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+        color: white;
+        font-family: Arial, sans-serif;
     }
-    #nebula{ position:fixed, inset:0, z-index:-3, pointer-events:none,
-      background:
-        radial-gradient(1200px 800px at 70% 30%, rgba(30,60,120,0.35), transparent 65%),
-        radial-gradient(900px 900px at 25% 75%, rgba(110,40,160,0.25), transparent 55%),
-        radial-gradient(1600px 1200px at 10% 10%, rgba(10,20,40,0.35), transparent 70%),
-        linear-gradient(180deg, #060813 0%, #0a0f20 60%, #060813 100%);
-      filter:saturate(1.05) contrast(1.05) brightness(0.95);
+    #stars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: transparent;
     }
-    canvas.starfield{ position:fixed, top:0, left:0, width:100vw, height:100vh, display:block, pointer-events:none }
-    #stars-far{ z-index:-2, opacity:.9 } #stars-near{ z-index:-1, opacity:.95 }
-    .content{
-      max-width:800px, margin:0 auto, padding:2rem 2.5rem,
-      background:rgba(14,16,26,0.62), border-radius:16px, box-shadow:0 0 32px 0 #10101A88,
-      position:relative, z-index:1, backdrop-filter:blur(2px), -webkit-backdrop-filter:blur(2px)
+    h1 {
+        text-align: center;
+        margin-top: 20%;
+        font-size: 3em;
+        text-shadow: 0 0 20px #ffffffaa;
     }
-    .main-title{ text-align:center, font-size:1.8rem, font-weight:bold, margin-bottom:.5rem }
-    .subtitle{ text-align:center, font-size:1.15rem, color:#aad0ff, font-style:italic, margin-bottom:2rem }
-    a{ color:#aad0ff, text-decoration:underline } a:hover{ color:#fff }
-    .btn{ display:inline-block, margin:.3em .4em, padding:.5em 1em, background:#222b40, color:#aad0ff,
-      border-radius:6px, text-decoration:none, font-weight:bold, transition:background .2s, color .2s }
-    .btn:hover{ background:#10101a, color:#fff }
-    @media (prefers-reduced-motion: reduce){
-      #stars-far, #stars-near{ display:none } #nebula{ background-attachment:fixed }
-    }
-  </style>
+</style>
 </head>
 <body>
-  <div id="nebula" aria-hidden="true"></div>
-  <canvas id="stars-far" class="starfield"></canvas>
-  <canvas id="stars-near" class="starfield"></canvas>
+<canvas id="stars"></canvas>
+<h1>ZM Theory</h1>
 
-  <div class="content">
-    <div class="main-title">Théorie ZM</div>
-    <div class="subtitle">Une Révolution Scientifique sur la Nature de l'Univers</div>
-    <p>Bienvenue. Site en cours de remise en ligne sous <strong>zm-theory.github.io</strong>.</p>
-    <p><a class="btn" href="#">PDF explicatif</a></p>
-  </div>
+<script>
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
 
-  <script>
-    const far = document.getElementById('stars-far'), near = document.getElementById('stars-near');
-    const ctf = far.getContext('2d'), ctn = near.getContext('2d');
-    let W=0, H=0, starsFar=[], starsNear=[], shooting=[], raf=0;
-    function fit(){
-      W = far.width = near.width = window.innerWidth;
-      H = far.height = near.height = window.innerHeight;
-      initStars();
-    }
-    window.addEventListener('resize', fit);
+let w, h;
+function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
 
-    function initStars(){
-      const countFar = Math.max(300, Math.floor(W*H/8000));
-      const countNear = Math.max(180, Math.floor(W*H/12000));
-      starsFar = make(countFar, .6, 1.4, .012);
-      starsNear = make(countNear, .9, 1.9, .018);
-      shooting = [];
+const numStars = 500;
+const stars = [];
+
+for (let i = 0; i < numStars; i++) {
+    stars.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.5 + 0.5,
+        opacity: Math.random(),
+        speed: Math.random() * 0.2 + 0.05
+    });
+}
+
+function drawStars() {
+    ctx.clearRect(0, 0, w, h);
+    for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fill();
     }
-    function make(n, rmin, rmax, speed){
-      const a=[];
-      for(let i=0; i<n; i++){
-        a.push({ x:Math.random()*W, y:Math.random()*H, r:rmin+Math.random()*(rmax-rmin),
-                 a: .2+Math.random()*.8, tw:.004+Math.random()*.01,
-                 vx:(Math.random()-.5)*speed, vy:(Math.random()-.5)*speed });
-      }
-      return a;
+}
+
+function updateStars() {
+    for (let star of stars) {
+        star.opacity += star.speed * (Math.random() > 0.5 ? 1 : -1);
+        if (star.opacity > 1) star.opacity = 1;
+        if (star.opacity < 0) star.opacity = 0;
     }
-    function draw(ctx, arr, glow){
-      ctx.clearRect(0,0,W,H);
-      for(const s of arr){
-        s.a += (Math.random()-.5)*s.tw;
-        if(s.a<.15) s.a=.15; if(s.a>1) s.a=1;
-        s.x+=s.vx; s.y+=s.vy;
-        if(s.x<0) s.x=W; if(s.x>W) s.x=0;
-        if(s.y<0) s.y=H; if(s.y>H) s.y=0;
-        ctx.save(); ctx.globalAlpha=s.a;
-        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-        ctx.fillStyle='#fff'; ctx.shadowColor=glow; ctx.shadowBlur=14; ctx.fill();
-        ctx.restore();
-      }
-    }
-    function maybeShoot(){
-      if(Math.random()<.006 && shooting.length<2){
-        shooting.push({ x:Math.random()*W*.8+W*.1, y:Math.random()*H*.6+H*.1,
-                        vx:-2-Math.random()*2, vy:-.6-Math.random()*.6, life:1 });
-      }
-    }
-    function drawShooting(ctx){
-      for(let i=shooting.length-1; i>=0; i--){
-        const sh=shooting[i];
-        ctx.save();
-        const g=ctx.createLinearGradient(sh.x,sh.y, sh.x-sh.vx*20, sh.y-sh.vy*20);
-        g.addColorStop(0,`rgba(255,255,255,${.85*sh.life})`);
-        g.addColorStop(1,'rgba(180,220,255,0)');
-        ctx.strokeStyle=g; ctx.lineWidth=1.6;
-        ctx.beginPath(); ctx.moveTo(sh.x,sh.y); ctx.lineTo(sh.x-sh.vx*20, sh.y-sh.vy*20); ctx.stroke();
-        ctx.restore();
-        sh.x+=sh.vx; sh.y+=sh.vy; sh.life-=.02;
-        if(sh.life<=0 || sh.x<-50 || sh.y<-50) shooting.splice(i,1);
-      }
-    }
-    function loop(){
-      draw(ctf, starsFar, '#bcd7ff');
-      draw(ctn, starsNear, '#d9ecff');
-      maybeShoot(); drawShooting(ctn);
-      raf = requestAnimationFrame(loop);
-    }
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    function motion(e){ if(e.matches){ cancelAnimationFrame(raf); ctf.clearRect(0,0,W,H); ctn.clearRect(0,0,W,H); } else { loop(); } }
-    if(mq.addEventListener) mq.addEventListener('change', motion); else mq.addListener(motion);
-    fit(); if(!mq.matches) loop();
-  </script>
+}
+
+function animate() {
+    drawStars();
+    updateStars();
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 </body>
 </html>
