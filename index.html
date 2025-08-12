@@ -1,10 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZM Theory</title>
-<style>
+  <meta name="google-site-verification" content="Hph_EoL7q-XHXSRWwijiGyxshOpkYYT5bCRxTyjdQjw" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="La Théorie ZM propose une nouvelle vision radicale de l’univers. Fondée sur l'information pure, une dynamique computationnelle et l'émergence de la conscience, elle redéfinit les fondements de la réalité." />
+  <meta name="keywords" content="Théorie ZM, physique de l'information, cosmologie computationnelle, conscience, supraconscience, pixel d'information, hyperspace, gravité quantique, science unifiée" />
+
+  <meta property="og:title" content="Théorie ZM – Une Révolution sur la Nature de l’Univers" />
+  <meta property="og:description" content="Une nouvelle théorie du réel, logique, informationnelle et consciente. Découvrez comment l’univers pourrait être une structure computationnelle émergente." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zerrouk-theory.github.io/" />
+  <meta property="og:image" content="https://zerrouk-theory.github.io/images/og-theoriezm.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Théorie ZM – Une Révolution sur la Nature de l’Univers" />
+  <meta name="twitter:description" content="Une cosmologie informationnelle unifiée de l’espace, du temps et de la conscience." />
+  <meta name="twitter:image" content="https://zerrouk-theory.github.io/images/og-theoriezm.jpg" />
+
+  <title>Théorie ZM – Une Révolution sur la Nature de l’Univers</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <style>
+    html, body{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Georgia", serif;
+      background: #060813;
+      color: #f2f2f2;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Calque nébuleux bleu nuit */
+    #nebula{
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      pointer-events: none;
+      background:
+        radial-gradient(1200px 800px at 70% 30%, rgba(30,60,120,0.35), transparent 65%),
+        radial-gradient(900px 900px at 25% 75%, rgba(110,40,160,0.22), transparent 55%),
+        radial-gradient(1600px 1200px at 10% 10%, rgba(10,20,40,0.35), transparent 70%),
+        linear-gradient(180deg, #060813 0%, #0a0f20 60%, #060813 100%);
+      filter: saturate(1.06) contrast(1.06) brightness(0.96);
+    }
+
+    /* Deux couches d’étoiles pour profondeur */
+    canvas.starfield{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      pointer-events: none;
+    }
+    #stars-far{ z-index: -2; opacity: .92; }
+    #stars-near{ z-index: -1; opacity: .97; }
+
+    .content{
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem;
+      background: rgba(14,16,26,0.62);
+      border-radius: 16px;
+      box-shadow: 0 0 32px 0 #10101A88;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    .main-title{ text-align: center; font-size: 1.8rem; font-weight: bold; margin-bottom: .5rem; }
+    .subtitle{ text-align: center; font-size: 1.15rem; color: #aad0ff; font-style: italic; margin-bottom: 2rem; }
+
+    .contact{
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #444;
+      font-style: italic;
+      font-size: .92rem;
+    }
+
+    a{ color: #aad0ff; text-decoration: underline; }
+    a:hover{ color: #fff; }
+
+    .btn{
+      display: inline-block;
+      margin: .3em .4em;
+      padding: .5em 1em;
+      background: #222b40;
+      color: #aad0ff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background .2s, color .2s;
+    }
+    .btn:hover{ background: #10101a; color: #fff; }
+
+    /* En mode "réduire les animations", on garde le fond, on ne cache pas les canvases. */
+    @media (prefers-reduced-motion: reduce){
+      #nebula{ background-attachment: fixed; }
+
     body, html {
         margin: 0;
         padding: 0;
