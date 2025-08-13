@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- Vérification Google Search Console -->
   <meta name="google-site-verification" content="Hph_EoL7q-XHXSRWwijiGyxshOpkYYT5bCRxTyjdQjw" />
+
+  <!-- Métadonnées SEO -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
   <meta name="description" content="La Théorie ZM propose une nouvelle vision radicale de l’univers. Fondée sur l'information pure, une dynamique computationnelle et l'émergence de la conscience, elle redéfinit les fondements de la réalité." />
   <meta name="keywords" content="Théorie ZM, physique de l'information, cosmologie computationnelle, conscience, supraconscience, pixel d'information, hyperspace, gravité quantique, science unifiée" />
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Théorie ZM – Une Révolution sur la Nature de l’Univers" />
   <meta property="og:description" content="Une nouvelle théorie du réel, logique, informationnelle et consciente. Découvrez comment l’univers pourrait être une structure computationnelle émergente." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://zerrouk-theory.github.io/" />
+  <meta property="og:url" content="https://zm-theory.github.io/" />
   <meta property="og:image" content="https://zerrouk-theory.github.io/images/og-theoriezm.jpg" />
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Théorie ZM – Une Révolution sur la Nature de l’Univers" />
   <meta name="twitter:description" content="Une cosmologie informationnelle unifiée de l’espace, du temps et de la conscience." />
   <meta name="twitter:image" content="https://zerrouk-theory.github.io/images/og-theoriezm.jpg" />
 
+  <!-- Titre -->
   <title>Théorie ZM – Une Révolution sur la Nature de l’Univers</title>
+
+  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
+  <!-- Styles -->
   <style>
     html, body{
       margin: 0;
@@ -34,7 +43,7 @@
       overflow-x: hidden;
     }
 
-    /* Calque nébuleux bleu nuit */
+    /* Calque nébuleux bleu nuit (dégradés doux) */
     #nebula{
       position: fixed;
       inset: 0;
@@ -46,9 +55,10 @@
         radial-gradient(1600px 1200px at 10% 10%, rgba(10,20,40,0.35), transparent 70%),
         linear-gradient(180deg, #060813 0%, #0a0f20 60%, #060813 100%);
       filter: saturate(1.06) contrast(1.06) brightness(0.96);
+      will-change: transform;
     }
 
-    /* Deux couches d’étoiles pour profondeur */
+    /* Deux couches d’étoiles pour la profondeur */
     canvas.starfield{
       position: fixed;
       top: 0;
@@ -61,6 +71,7 @@
     #stars-far{ z-index: -2; opacity: .92; }
     #stars-near{ z-index: -1; opacity: .97; }
 
+    /* Cartouche de contenu */
     .content{
       max-width: 800px;
       margin: 0 auto;
@@ -101,20 +112,31 @@
     }
     .btn:hover{ background: #10101a; color: #fff; }
 
-    /* En mode "réduire les animations", on garde le fond, on ne cache pas les canvases. */
+    /* Accessibilité : si l’utilisateur préfère réduire les animations, on garde un rendu statique */
     @media (prefers-reduced-motion: reduce){
       #nebula{ background-attachment: fixed; }
+    }
+
+    /* Fallback si JS désactivé : simple ciel étoilé via background */
+    noscript .nojs-bg{
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at center, rgba(255,255,255,.08) 0%, transparent 60%),
+        #060813;
     }
   </style>
 </head>
 
+<!-- Données structurées -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"WebSite",
   "name":"Théorie ZM",
-  "url":"https://zerrouk-theory.github.io/",
-  "potentialAction":{"@type":"SearchAction","target":"https://zerrouk-theory.github.io/?q={search_term_string}","query-input":"required name=search_term_string"}
+  "url":"https://zm-theory.github.io/",
+  "potentialAction":{"@type":"SearchAction","target":"https://zm-theory.github.io/?q={search_term_string}","query-input":"required name=search_term_string"}
 }
 </script>
 
@@ -126,7 +148,7 @@
   "about":["physique de l'information","cosmologie","conscience","géométrie émergente"],
   "inLanguage":"fr",
   "author":{"@type":"Person","name":"Mohammed Zerrouk"},
-  "url":"https://zerrouk-theory.github.io/",
+  "url":"https://zm-theory.github.io/",
   "sameAs":["https://hal.science/hal-05186131v1"]
 }
 </script>
@@ -136,8 +158,11 @@
   <div id="nebula" aria-hidden="true"></div>
 
   <!-- Deux couches d’étoiles -->
-  <canvas id="stars-far" class="starfield"></canvas>
-  <canvas id="stars-near" class="starfield"></canvas>
+  <canvas id="stars-far" class="starfield" aria-hidden="true"></canvas>
+  <canvas id="stars-near" class="starfield" aria-hidden="true"></canvas>
+
+  <!-- Fallback sans JS -->
+  <noscript><div class="nojs-bg" aria-hidden="true"></div></noscript>
 
   <div class="content">
     <div class="main-title">Théorie ZM</div>
@@ -156,14 +181,13 @@
 
     <p><strong>La conscience, seuil informationnel</strong><br>La conscience n’est plus un épiphénomène de la matière, mais une propriété émergente, mesurable, définie par l’information intégrée φ. Lorsque cette information dépasse un seuil critique φc, des boucles d’auto-référence stables deviennent possibles, enclenchant mécaniquement les effets d’un système capable de se représenter lui-même. Ce modèle rend compte à la fois des états de conscience biologique, et ouvre la voie à la conception de consciences artificielles auto-référentielles.</p>
 
-    <p><strong>Une théorie falsifiable et prédictive</strong><br>La Théorie ZM propose des prédictions testables,
+    <p><strong>Une théorie falsifiable et prédictive</strong><br>La Théorie ZM propose des prédictions testables,</p>
     <ul>
       <li>signatures fractales dans la distribution de la matière,</li>
       <li>structures informationnelles pré-géométriques détectables,</li>
       <li>seuils dynamiques d’émergence de conscience simulables,</li>
       <li>et, à très long terme, écarts potentiels à la relativité générale à des échelles extrêmes.</li>
     </ul>
-    </p>
 
     <p><strong>Origine computationnelle</strong><br>Le Big Bang devient un point d’auto-activation logique du graphe informationnel. L’univers n’émerge pas du néant mais d’une structuration progressive d’un hyperspace relationnel et intemporel.</p>
 
@@ -192,7 +216,7 @@
     const cFar = far.getContext('2d');
     const cNear = near.getContext('2d');
 
-    // Hi-DPI
+    // Hi-DPI safe sizing
     function sizeCanvas(canvas){
       const ratio = Math.max(window.devicePixelRatio || 1, 1);
       canvas.style.width  = window.innerWidth + 'px';
@@ -210,22 +234,20 @@
       W = window.innerWidth;
       H = window.innerHeight;
       initStars();
-      if (mq.matches){ renderStatic(); } // si animations réduites, on redessine statique
+      if (mq.matches){ renderStatic(); }
     }
 
     window.addEventListener('resize', () => {
-      // throttle léger pour éviter de trop redessiner pendant le resize
       clearTimeout(fit._t);
       fit._t = setTimeout(fit, 120);
     });
 
-    // Distributions
+    // Stars state
     let starsFar = [], starsNear = [], shooting = [];
     function initStars(){
-      const density = Math.max(1, Math.min(2.2, (W*H) / (1200*800))); // densité adaptative
+      const density = Math.max(1, Math.min(2.2, (W*H) / (1200*800)));
       const countFar  = Math.floor(320 * density);
       const countNear = Math.floor(200 * density);
-
       starsFar = createStars(countFar, 0.7, 1.6, 0.012);
       starsNear = createStars(countNear, 1.0, 2.1, 0.018);
       shooting = [];
@@ -249,7 +271,6 @@
 
     function drawLayer(ctx, stars, glow){
       ctx.clearRect(0, 0, W, H);
-      ctx.shadowBlur = 0; // reset sécurité
       for(const s of stars){
         s.a += (Math.random()-0.5)*s.tw;
         if(s.a < 0.16) s.a = 0.16;
@@ -271,7 +292,6 @@
       }
     }
 
-    // Étoiles filantes occasionnelles
     function maybeShoot(){
       if(Math.random() < 0.006 && shooting.length < 2){
         const startY = Math.random()*H*0.6 + H*0.1;
@@ -309,7 +329,6 @@
     function renderStatic(){
       drawLayer(cFar, starsFar, '#bcd7ff');
       drawLayer(cNear, starsNear, '#d9ecff');
-      // pas d’étoiles filantes en statique
     }
 
     function loop(){
@@ -320,7 +339,7 @@
       raf = requestAnimationFrame(loop);
     }
 
-    // Accessibilité
+    // Accessibilité animations
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     function motionHandler(e){
       if(e.matches){
