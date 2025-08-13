@@ -4,24 +4,29 @@
   <!-- Vérification Google Search Console -->
   <meta name="google-site-verification" content="Hph_EoL7q-XHXSRWwijiGyxshOpkYYT5bCRxTyjdQjw" />
 
-  <!-- Métadonnées SEO de base -->
+  <!-- Métadonnées de base -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://zm-theory.github.io/"/>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0a0f20" />
+  <link rel="canonical" href="https://zm-theory.github.io/" />
+  <meta name="language" content="fr" />
+  <meta name="author" content="Mohammed Zerrouk" />
 
-  <!-- Titre + description (inclut la requête “ZM Théorie”) -->
+  <!-- Titre + description (inclut l’expression de requête “ZM Théorie”) -->
   <title>Théorie ZM — ZM Théorie, une nouvelle vision de l’Univers fondée sur l’information</title>
-  <meta name="description" content="ZM Théorie, ou Théorie ZM, propose une cosmologie informationnelle unifiée : l’univers comme réseau d’information, lois émergentes et conscience mesurable. Découvrez la vision complète et le PDF explicatif.">
+  <meta name="description" content="ZM Théorie, ou Théorie ZM, propose une cosmologie informationnelle unifiée : l’univers comme réseau d’information, lois émergentes, géométrie et conscience mesurable. PDF explicatif disponible." />
   <meta name="keywords" content="Théorie ZM, ZM Théorie, physique de l'information, cosmologie computationnelle, conscience, supraconscience, pixels d'information, hyperspace, gravité quantique, science unifiée" />
-  <meta name="theme-color" content="#0a0f20"/>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l’Univers fondée sur l’information" />
-  <meta property="og:description" content="Une cosmologie informationnelle unifiée : espace-temps, lois physiques et conscience émergent d’un graphe d’information. PDF explicatif disponible." />
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Théorie ZM" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zm-theory.github.io/" />
+  <meta property="og:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l’Univers fondée sur l’information" />
+  <meta property="og:description" content="Une cosmologie informationnelle unifiée : espace-temps, lois physiques et conscience émergent d’un graphe d’information. PDF explicatif disponible." />
   <meta property="og:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg" />
+  <meta property="og:image:alt" content="Illustration cosmique de la Théorie ZM (fond étoilé bleu nuit, réseau d’information)" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -29,17 +34,47 @@
   <meta name="twitter:description" content="L’univers comme réseau d’information : lois émergentes, géométrie, conscience. Lisez l’intro et le PDF explicatif." />
   <meta name="twitter:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <!-- Icônes -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Styles -->
+  <!-- Données structurées (WebSite + CreativeWork) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Théorie ZM",
+    "url":"https://zm-theory.github.io/",
+    "inLanguage":"fr",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://zm-theory.github.io/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CreativeWork",
+    "name":"Théorie ZM — Théorie des Pixels d’Information",
+    "about":["physique de l'information","cosmologie","conscience","géométrie émergente"],
+    "inLanguage":"fr",
+    "author":{"@type":"Person","name":"Mohammed Zerrouk"},
+    "url":"https://zm-theory.github.io/",
+    "sameAs":["https://hal.science/hal-05186131v1"]
+  }
+  </script>
+
+  <!-- Styles (garde ton CSS existant si tu en as en externe) -->
   <style>
     html, body{
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: "Georgia", serif;
-      background: #060813; /* toile de fond */
+      background: #060813;
       color: #f2f2f2;
       line-height: 1.7;
       overflow-x: hidden;
@@ -47,8 +82,7 @@
       -moz-osx-font-smoothing: grayscale;
       text-rendering: optimizeLegibility;
     }
-
-    /* Empilement clair : 0=nébuleuse, 1=étoiles lointaines, 2=étoiles proches, 10=contenu */
+    /* 0=nébuleuse, 1=étoiles lointaines, 2=étoiles proches, 10=contenu */
     #nebula{
       position: fixed;
       inset: 0;
@@ -62,17 +96,13 @@
       filter: saturate(1.06) contrast(1.06) brightness(0.96);
       will-change: transform;
     }
-
     canvas.starfield{
-      position: fixed;
-      top: 0; left: 0;
+      position: fixed; top: 0; left: 0;
       width: 100vw; height: 100vh;
-      display: block;
-      pointer-events: none;
+      display: block; pointer-events: none;
     }
     #stars-far  { z-index: 1; opacity: .92; }
     #stars-near { z-index: 2; opacity: .97; }
-
     .content{
       max-width: 800px;
       margin: 0 auto;
@@ -80,53 +110,31 @@
       background: rgba(14,16,26,0.62);
       border-radius: 16px;
       box-shadow: 0 0 32px 0 #10101A88;
-      position: relative;
-      z-index: 10;
+      position: relative; z-index: 10;
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
     }
-
     .main-title{ text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: .5rem; }
     .subtitle{ text-align: center; font-size: 1.15rem; color: #aad0ff; font-style: italic; margin-bottom: 2rem; }
-
     .contact{
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid #444;
-      font-style: italic;
-      font-size: .92rem;
+      margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid #444; font-style: italic; font-size: .92rem;
     }
-
     a{ color: #aad0ff; text-decoration: underline; }
     a:hover{ color: #fff; }
-
     .btn{
-      display: inline-block;
-      margin: .3em .4em;
-      padding: .6em 1.1em;
-      background: #222b40;
-      color: #aad0ff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
+      display: inline-block; margin: .3em .4em; padding: .6em 1.1em;
+      background: #222b40; color: #aad0ff; border-radius: 8px;
+      text-decoration: none; font-weight: 700;
       transition: background .2s, color .2s, transform .08s;
       border: 1px solid #2d3b5a;
     }
     .btn:hover{ background: #10101a; color: #fff; transform: translateY(-1px); }
 
-    /* Accessibilité : si l’utilisateur préfère réduire les animations, rendu statique */
-    @media (prefers-reduced-motion: reduce){
-      #nebula{ background-attachment: fixed; }
-    }
-
-    /* Fallback sans JS : voile doux */
+    @media (prefers-reduced-motion: reduce){ #nebula{ background-attachment: fixed; } }
     noscript .nojs-bg{
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      background:
-        radial-gradient(ellipse at center, rgba(255,255,255,.08) 0%, transparent 60%),
-        #060813;
+      position: fixed; inset: 0; z-index: 1;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,.08) 0%, transparent 60%), #060813;
     }
   </style>
 </head>
