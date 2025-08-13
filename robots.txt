@@ -1,8 +1,16 @@
+# robots.txt — zm-theory.github.io
+
+# Autoriser l’accès complet aux pages, assets, JS/CSS (important pour le rendu)
 User-agent: *
 Allow: /
 
-# Empêche l’indexation d’éventuels dossiers de travail (garde-les seulement si tu les utilises)
-Disallow: /drafts/
-Disallow: /temp/
-
+# Indiquer le sitemap XML (accélère la découverte des URLs)
 Sitemap: https://zm-theory.github.io/sitemap.xml
+
+# (Optionnel) réduire un peu la fréquence de Bing pour éviter des pics
+User-agent: Bingbot
+Crawl-delay: 5
+
+# (Optionnel) autres bots « rapides »
+User-agent: PetalBot
+Crawl-delay: 5
