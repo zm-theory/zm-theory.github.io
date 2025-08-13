@@ -24,30 +24,26 @@
   <meta name="twitter:description" content="Une cosmologie informationnelle unifiée de l’espace, du temps et de la conscience." />
   <meta name="twitter:image" content="https://zerrouk-theory.github.io/images/og-theoriezm.jpg" />
 
-  <!-- Titre -->
   <title>Théorie ZM – Une Révolution sur la Nature de l’Univers</title>
-
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-  <!-- Styles -->
   <style>
     html, body{
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: "Georgia", serif;
-      background: #060813;
+      background: #060813; /* toile de fond */
       color: #f2f2f2;
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* Calque nébuleux bleu nuit (dégradés doux) */
+    /* Empilement clair : 0=nébuleuse, 1=étoiles lointaines, 2=étoiles proches, 10=contenu */
     #nebula{
       position: fixed;
       inset: 0;
-      z-index: -3;
+      z-index: 0;
       pointer-events: none;
       background:
         radial-gradient(1200px 800px at 70% 30%, rgba(30,60,120,0.35), transparent 65%),
@@ -58,20 +54,16 @@
       will-change: transform;
     }
 
-    /* Deux couches d’étoiles pour la profondeur */
     canvas.starfield{
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
       display: block;
       pointer-events: none;
     }
-    #stars-far{ z-index: -2; opacity: .92; }
-    #stars-near{ z-index: -1; opacity: .97; }
+    #stars-far  { z-index: 1; opacity: .92; }
+    #stars-near { z-index: 2; opacity: .97; }
 
-    /* Cartouche de contenu */
     .content{
       max-width: 800px;
       margin: 0 auto;
@@ -80,7 +72,7 @@
       border-radius: 16px;
       box-shadow: 0 0 32px 0 #10101A88;
       position: relative;
-      z-index: 1;
+      z-index: 10;
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
     }
@@ -112,16 +104,16 @@
     }
     .btn:hover{ background: #10101a; color: #fff; }
 
-    /* Accessibilité : si l’utilisateur préfère réduire les animations, on garde un rendu statique */
+    /* Accessibilité : si l’utilisateur préfère réduire les animations, rendu statique */
     @media (prefers-reduced-motion: reduce){
       #nebula{ background-attachment: fixed; }
     }
 
-    /* Fallback si JS désactivé : simple ciel étoilé via background */
+    /* Fallback sans JS : voile doux */
     noscript .nojs-bg{
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: 1;
       background:
         radial-gradient(ellipse at center, rgba(255,255,255,.08) 0%, transparent 60%),
         #060813;
@@ -236,7 +228,6 @@
       initStars();
       if (mq.matches){ renderStatic(); }
     }
-
     window.addEventListener('resize', () => {
       clearTimeout(fit._t);
       fit._t = setTimeout(fit, 120);
@@ -357,6 +348,11 @@
     fit();
     if (!mq.matches) loop();
     else renderStatic();
+
+    // Petit garde-fou : log si contexte 2D indisponible
+    if(!cFar || !cNear){
+      console.warn('Canvas 2D non disponible (contexte null). Vérifie que ton navigateur n’active pas un bloqueur.');
+    }
   </script>
 </body>
 </html>
