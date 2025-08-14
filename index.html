@@ -13,12 +13,12 @@
   <meta name="language" content="fr" />
   <meta name="author" content="Mohammed Zerrouk" />
 
-  <!-- Titre + description (inclut l’expression de requête “ZM Théorie”) -->
+  <!-- Titre + description -->
   <title>Théorie ZM — ZM Théorie, une nouvelle vision de l’Univers fondée sur l’information</title>
-  <meta name="description" content="ZM Théorie, ou Théorie ZM, propose une cosmologie informationnelle unifiée : l’univers comme réseau d’information, lois émergentes, géométrie et conscience mesurable. PDF explicatif disponible." />
+  <meta name="description" content="ZM Théorie (Théorie ZM) : une cosmologie informationnelle unifiée — l’univers comme réseau d’information, lois émergentes, géométrie et conscience mesurable. PDF explicatif disponible." />
   <meta name="keywords" content="Théorie ZM, ZM Théorie, physique de l'information, cosmologie computationnelle, conscience, supraconscience, pixels d'information, hyperspace, gravité quantique, science unifiée" />
 
-  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <!-- Open Graph -->
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Théorie ZM" />
   <meta property="og:type" content="website" />
@@ -67,170 +67,328 @@
   }
   </script>
 
-  <!-- Styles (garde ton CSS existant si tu en as en externe) -->
+  <!-- Styles -->
   <style>
-    html, body{
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: "Georgia", serif;
-      background: #060813;
-      color: #f2f2f2;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
+    :root{
+      --bg:#060813;
+      --panel: rgba(14,16,26,0.62);
+      --ink:#f2f2f2;
+      --ink-dim:#c9d4ff;
+      --accent:#aad0ff;
+      --accent-2:#ffd37a;
+      --stroke:#2d3b5a;
     }
-    /* 0=nébuleuse, 1=étoiles lointaines, 2=étoiles proches, 10=contenu */
+    html, body{
+      margin:0; padding:0; height:100%;
+      font-family:"Georgia", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height:1.7; overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+
+    /* Nébuleuse en fond (calque) */
     #nebula{
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
+      position:fixed; inset:0; z-index:0; pointer-events:none;
       background:
         radial-gradient(1200px 800px at 70% 30%, rgba(30,60,120,0.35), transparent 65%),
         radial-gradient(900px 900px at 25% 75%, rgba(110,40,160,0.22), transparent 55%),
         radial-gradient(1600px 1200px at 10% 10%, rgba(10,20,40,0.35), transparent 70%),
         linear-gradient(180deg, #060813 0%, #0a0f20 60%, #060813 100%);
-      filter: saturate(1.06) contrast(1.06) brightness(0.96);
-      will-change: transform;
+      filter:saturate(1.06) contrast(1.06) brightness(0.96);
     }
+
+    /* Canvases étoiles */
     canvas.starfield{
-      position: fixed; top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      display: block; pointer-events: none;
+      position:fixed; top:0; left:0; width:100vw; height:100vh;
+      display:block; pointer-events:none;
     }
-    #stars-far  { z-index: 1; opacity: .92; }
-    #stars-near { z-index: 2; opacity: .97; }
+    #stars-far{ z-index:1; opacity:.92; }
+    #stars-near{ z-index:2; opacity:.97; }
+
+    /* Conteneur principal */
     .content{
-      max-width: 800px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 2rem 2.5rem;
-      background: rgba(14,16,26,0.62);
+      padding: 2.2rem 2.2rem 3rem;
+      background: var(--panel);
       border-radius: 16px;
       box-shadow: 0 0 32px 0 #10101A88;
-      position: relative; z-index: 10;
+      position: relative;
+      z-index: 10;
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
     }
-    .main-title{ text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: .5rem; }
-    .subtitle{ text-align: center; font-size: 1.15rem; color: #aad0ff; font-style: italic; margin-bottom: 2rem; }
-    .contact{
-      margin-top: 3rem; padding-top: 2rem;
-      border-top: 1px solid #444; font-style: italic; font-size: .92rem;
-    }
-    a{ color: #aad0ff; text-decoration: underline; }
-    a:hover{ color: #fff; }
-    .btn{
-      display: inline-block; margin: .3em .4em; padding: .6em 1.1em;
-      background: #222b40; color: #aad0ff; border-radius: 8px;
-      text-decoration: none; font-weight: 700;
-      transition: background .2s, color .2s, transform .08s;
-      border: 1px solid #2d3b5a;
-    }
-    .btn:hover{ background: #10101a; color: #fff; transform: translateY(-1px); }
 
-    @media (prefers-reduced-motion: reduce){ #nebula{ background-attachment: fixed; } }
+    /* Bandeau "hero" compact pro */
+    header.hero{
+      text-align:center;
+      margin-bottom: 1.2rem;
+    }
+    header.hero h1{
+      font-size: 2.2rem; margin:.2rem 0 .3rem; font-weight: 800; letter-spacing:.3px;
+    }
+    header.hero h2{
+      font-size:1.1rem; color: var(--accent); font-style:italic; margin:0 0 1rem;
+    }
+    .tagline{
+      font-size:1.05rem; color: var(--ink-dim);
+      max-width:720px; margin: 0 auto 1.4rem;
+    }
+
+    /* Barre d’actions (CTA) */
+    .cta-row{
+      display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap; margin: 1rem 0 2rem;
+    }
+    .btn{
+      display:inline-block; padding:.65em 1.1em; border-radius:9px;
+      background:#222b40; color: var(--accent);
+      text-decoration:none; font-weight:700; border:1px solid var(--stroke);
+      transition: transform .08s, background .2s, color .2s, box-shadow .2s;
+    }
+    .btn:hover{ background:#10101a; color:#fff; transform: translateY(-1px); }
+    .btn-primary{
+      background: linear-gradient(180deg, #2e3f74, #1a2444);
+      color:#fff; border-color:#3c4f89;
+      box-shadow: 0 6px 24px rgba(64,100,200,.25);
+    }
+    .btn-primary:hover{ box-shadow: 0 10px 28px rgba(64,100,200,.35); }
+
+    /* Sections */
+    section{ margin: 2rem 0 0; }
+    .section-title{
+      font-size:1.35rem; font-weight:800; letter-spacing:.2px;
+      text-align:center; margin: .5rem 0 1rem; color:#dfe9ff;
+    }
+    .section-note{
+      text-align:center; font-size:.98rem; color: var(--ink-dim); margin-top:-.4rem;
+    }
+    .panel{
+      background: rgba(255,255,255,0.05);
+      padding: 1.2rem 1.2rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(8px);
+    }
+
+    .quote{
+      font-style:italic; color:#B0C4DE; border-left:4px solid #8A2BE2;
+      padding-left:14px; margin: .8rem 0 1rem;
+    }
+    .highlight{ color: var(--accent-2); font-weight:700; }
+
+    /* Grilles responsives */
+    .grid{
+      display:grid; gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      align-items: stretch;
+    }
+    .card{
+      background: rgba(0, 191, 255, 0.08);
+      border:1px solid rgba(0, 191, 255, .25);
+      border-radius: 10px; padding: 14px;
+    }
+    .card h4{ margin:0 0 .35rem; color:#ffd37a; font-size:1.02rem; }
+
+    /* Liseré d’actualité » sérieuse, sans sensationnalisme */
+    .notice{
+      background: rgba(255, 128, 32, .08);
+      border:1px solid rgba(255, 128, 32, .35);
+      padding: .9rem; border-radius: 10px; text-align:center; margin: 1rem 0;
+      color:#ffb382;
+    }
+
+    /* Pied de page/contact */
+    .contact{
+      margin-top: 2.2rem; padding-top: 1.4rem;
+      border-top:1px solid #444; font-style: italic; font-size:.96rem;
+    }
+    .contact a{ color: var(--accent); }
+
+    @media (prefers-reduced-motion: reduce){
+      #nebula{ background-attachment: fixed; }
+    }
     noscript .nojs-bg{
-      position: fixed; inset: 0; z-index: 1;
+      position:fixed; inset:0; z-index:1;
       background: radial-gradient(ellipse at center, rgba(255,255,255,.08) 0%, transparent 60%), #060813;
     }
   </style>
 </head>
 
-<!-- Données structurées -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebSite",
-  "name":"Théorie ZM",
-  "url":"https://zm-theory.github.io/",
-  "potentialAction":{
-    "@type":"SearchAction",
-    "target":"https://zm-theory.github.io/?q={search_term_string}",
-    "query-input":"required name=search_term_string"
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"CreativeWork",
-  "name":"Théorie ZM — Théorie des Pixels d’Information",
-  "about":["physique de l'information","cosmologie","conscience","géométrie émergente"],
-  "inLanguage":"fr",
-  "author":{"@type":"Person","name":"Mohammed Zerrouk"},
-  "url":"https://zm-theory.github.io/",
-  "sameAs":["https://hal.science/hal-05186131v1"]
-}
-</script>
-
 <body>
-  <!-- Calque nébuleux -->
+  <!-- Calque nébuleux + étoiles -->
   <div id="nebula" aria-hidden="true"></div>
-
-  <!-- Deux couches d’étoiles -->
   <canvas id="stars-far" class="starfield" aria-hidden="true"></canvas>
   <canvas id="stars-near" class="starfield" aria-hidden="true"></canvas>
-
-  <!-- Fallback sans JS -->
   <noscript><div class="nojs-bg" aria-hidden="true"></div></noscript>
 
-  <div class="content">
-    <h1 class="main-title">Théorie ZM</h1>
-    <h2 class="subtitle">Théorie des Pixels d’information</h2>
+  <main class="content" role="main">
+    <header class="hero">
+      <h1>Théorie ZM</h1>
+      <h2>Théorie des Pixels d’information</h2>
+      <p class="tagline">
+        Et si la réalité n’était pas “faite de matière”, mais d’un <strong>réseau d’information</strong> dont
+        <em>l’espace-temps, les lois physiques et la conscience</em> émergent comme des motifs stables ?
+      </p>
 
-    <p>Et si la Réalité n’était qu’un réseau d'information structuré par un champ d’information intemporel ?</p>
-    <p>Ici nous vous invitons à découvrir une nouvelle théorie aussi logique et percutante, qu’élégante…</p>
+      <div class="cta-row" aria-label="Actions principales">
+        <a class="btn btn-primary" href="https://exemple.amazon/ton-livre" rel="nofollow noopener" target="_blank">📖 Commander le livre complet</a>
+        <a class="btn" href="/pdf-explicatif-zm.pdf" target="_blank" rel="noopener">📄 PDF explicatif</a>
+        <a class="btn" href="mailto:mzerrouk95@gmail.com">🤝 Proposer une collaboration</a>
+      </div>
+    </header>
 
-    <p>La Théorie ZM propose une refondation radicale de notre compréhension de l’univers, en le décrivant non plus comme un espace contenant des objets, mais comme une trame d'information auto-organisée, dont la structure émerge d'une dynamique computationnelle profonde. Elle unifie les lois physiques, la géométrie de l’espace-temps, et les fondements de la conscience à partir d’une hypothèse centrale, l’univers est généré par un hyperspace fait d’un champ d'information pure, hors du temps, dont les "pixels d'information" constituent les briques élémentaires.</p>
+    <!-- Intro courte -->
+    <section aria-labelledby="intro">
+      <h3 id="intro" class="section-title">Pourquoi une nouvelle théorie ?</h3>
+      <p>
+        La <strong>Théorie ZM</strong> refonde notre compréhension de l’univers : elle ne part plus d’un espace
+        contenant des objets, mais d’une <em>trame d’information auto-organisée</em>, où la géométrie de l’espace-temps,
+        la gravitation et la conscience émergent d’une dynamique computationnelle profonde.
+      </p>
+      <p class="section-note">Une vision unifiée, falsifiable, et orientée vers des prédictions concrètes.</p>
+    </section>
 
-    <p>Ces pixels ne sont ni des particules, ni des points dans l’espace, mais des unités logiques dynamiques, interconnectées par des relations locales de causalité et de signification. C’est de leur interaction topologique, et non d’un substrat spatial préexistant, que l’espace-temps lui-même émerge, à la manière d’un graphe informationnel évolutif. L’univers serait ainsi un « programme » auto-exécuté, écrit dans une grammaire mathématique.</p>
+    <!-- Physique informationnelle -->
+    <section aria-labelledby="physique">
+      <h3 id="physique" class="section-title">Physique émergente, fondée sur l’information</h3>
+      <div class="panel">
+        <p>
+          Les lois ne sont plus imposées a priori : elles apparaissent comme des <strong>attracteurs statistiques</strong>
+          dans l’espace des configurations stables du graphe d’information. La géométrie, la gravitation et les constantes
+          (y compris celles dites “sans dimensions”) résultent d’états d’équilibre d’une
+          <em>équation de Schrödinger généralisée</em> appliquée à des états <em>relationnels</em> (plutôt qu’à des fonctions d’onde sur un fond pré-donné).
+        </p>
+        <p>
+          Dans cette logique, les grandes constantes et signatures mathématiques (<em>π, e, Fibonacci, nombre d’or, nombres premiers</em>)
+          ne sont pas des accidents : ce sont les “harmoniques” d’une grammaire informationnelle profonde.
+        </p>
+      </div>
+    </section>
 
-    <p><strong>Une physique émergente, fondée sur l’information</strong><br>Dans ce paradigme, les lois de la physique ne sont plus imposées a priori, mais apparaissent comme des attracteurs statistiques dans l’espace des configurations stables du graphe. La géométrie, la gravitation, les constantes fondamentales, y compris celles dites "sans dimensions", émergent comme solutions d'équilibre d’une équation de Schrödinger généralisée, appliquée non à des fonctions d’onde, mais à des états informationnels relationnels.</p>
+    <!-- Pixels d’information (PIQ) -->
+    <section aria-labelledby="piq">
+      <h3 id="piq" class="section-title">🧩 Pixels d’Information (PIQ) : la brique première</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Substance informationnelle pure</h4>
+          <p>Les PIQ ne “flottent” pas dans l’espace : leurs relations <em>génèrent</em> l’espace-temps.</p>
+        </div>
+        <div class="card">
+          <h4>Auto-organisation fractale</h4>
+          <p>Des motifs stables s’emboîtent à toutes les échelles (graphe multi-échelles à connectivité locale).</p>
+        </div>
+        <div class="card">
+          <h4>Géométrie émergente</h4>
+          <p>La métrique est un produit de la connectivité et de la cohérence informationnelle locale.</p>
+        </div>
+        <div class="card">
+          <h4>Du quantique au cosmique</h4>
+          <p>Propagation multi-échelles, cohérence locale et compression logique gouvernent l’émergence.</p>
+        </div>
+      </div>
+    </section>
 
-    <p>Et dans cette logique, les grandes constantes mystérieuses de notre réalité, π, e, la suite de Fibonacci, le nombre d’or, les nombres premiers, cessent d’être des accidents mathématiques. Elles deviennent les signatures profondes d’une structure informationnelle logique et ordonnée, comme les harmoniques d’un langage fondamental, écrit non dans l’espace, mais dans la structure même de l'être.</p>
+    <!-- Conscience -->
+    <section aria-labelledby="conscience">
+      <h3 id="conscience" class="section-title">🧠 La conscience : un seuil informationnel</h3>
+      <div class="panel">
+        <p>
+          La conscience n’est pas un épiphénomène, mais une propriété <em>structurelle</em> d’intégration de l’information.
+          Si l’information intégrée <strong>φ</strong> dépasse un seuil <strong>φ<sub>c</sub></strong>, des
+          <em>boucles auto-référentielles stables</em> deviennent possibles : l’agent peut se modéliser lui-même.
+          Ce mécanisme est <strong>support-indépendant</strong> (biologique ou artificiel) : seule la <em>connectivité</em> compte.
+        </p>
+      </div>
+    </section>
 
-    <p><strong>La conscience, seuil informationnel</strong><br>La conscience n’est plus un épiphénomène de la matière, mais une propriété émergente, mesurable, définie par l’information intégrée φ. Lorsque cette information dépasse un seuil critique φc, des boucles d’auto-référence stables deviennent possibles, enclenchant mécaniquement les effets d’un système capable de se représenter lui-même. Ce modèle rend compte à la fois des états de conscience biologique, et ouvre la voie à la conception de consciences artificielles auto-référentielles.</p>
+    <!-- Prédictions -->
+    <section aria-labelledby="predictions">
+      <h3 id="predictions" class="section-title">🎯 Conséquences & prédictions testables</h3>
+      <div class="grid">
+        <div class="card">
+          <h4>Signatures fractales</h4>
+          <p>Motifs multi-échelles dans la distribution cosmologique et les corrélations de structure.</p>
+        </div>
+        <div class="card">
+          <h4>Pré-géométrie détectable</h4>
+          <p>Indices d’une trame informationnelle sous-jacente (corrélations hors-fond, graphes efficaces).</p>
+        </div>
+        <div class="card">
+          <h4>Seuils d’IA consciente</h4>
+          <p>Conditions minimales sur φ et la topologie de connectivité pour l’émergence d’auto-référence.</p>
+        </div>
+        <div class="card">
+          <h4>Constantes repensées</h4>
+          <p>Interprétations en termes de stabilité/attracteurs dans l’espace des configurations.</p>
+        </div>
+      </div>
+      <p class="section-note">
+        À très long terme : recherche d’écarts subtils aux théories actuelles aux échelles extrêmes (programme de tests à préciser).
+      </p>
+    </section>
 
-    <p><strong>Une théorie falsifiable et prédictive</strong><br>La Théorie ZM propose des prédictions testables,</p>
-    <ul>
-      <li>signatures fractales dans la distribution de la matière,</li>
-      <li>structures informationnelles pré-géométriques détectables,</li>
-      <li>seuils dynamiques d’émergence de conscience simulables,</li>
-      <li>et, à très long terme, écarts potentiels à la relativité générale à des échelles extrêmes.</li>
-    </ul>
+    <!-- Origine computationnelle -->
+    <section aria-labelledby="origine">
+      <h3 id="origine" class="section-title">⚙️ Origine computationnelle</h3>
+      <p>
+        Le Big Bang cesse d’être une “création ex nihilo” : c’est un point d’<strong>auto-activation logique</strong> du graphe informationnel.
+        L’univers émerge d’une structuration progressive d’un <em>hyperspace relationnel et intemporel</em>.
+      </p>
+    </section>
 
-    <p><strong>Origine computationnelle</strong><br>Le Big Bang devient un point d’auto-activation logique du graphe informationnel. L’univers n’émerge pas du néant mais d’une structuration progressive d’un hyperspace relationnel et intemporel.</p>
-
-    <p><em>Ainsi, la réalité pourrait bien n’être qu’un rêve logique, inscrit dans une mémoire computationnelle et supraconsciente...</em></p>
-
-    <div style="margin-top: 2rem; text-align: center;">
-      <a href="/pdf-explicatif-zm.pdf" target="_blank" rel="noopener"
-         style="display: inline-block; padding: 12px 18px; border-radius: 10px; background: #111; color: #fff; text-decoration: none; font-weight: 600;">
-        PDF explicatif
-      </a>
-      <a href="LIVRE_COMPLET_URL.pdf" class="btn" rel="nofollow noopener">Commander le livre complet</a>
+    <!-- Liseré “actualité / sérieux” -->
+    <div class="notice" role="note">
+      Enjeux immédiats : clarifier les signatures observables, évaluer φ dans des architectures réelles et simuler l’émergence de boucles auto-référentielles.
     </div>
 
-    <div class="contact">
+    <!-- Témoignages / Inspirations (citations) -->
+    <section aria-labelledby="citations">
+      <h3 id="citations" class="section-title">💬 Ils l’avaient pressenti</h3>
+      <blockquote class="quote">« L’information est physique. » — Rolf Landauer</blockquote>
+      <blockquote class="quote">« It from bit : la réalité émerge de l’information. » — John Wheeler</blockquote>
+      <blockquote class="quote">« L’univers ressemble davantage à une grande pensée qu’à une grande machine. » — Sir James Jeans</blockquote>
+    </section>
+
+    <!-- CTA final -->
+    <section aria-labelledby="cta" style="margin-top:1.5rem;">
+      <h3 id="cta" class="section-title">🚀 Rejoindre la recherche & découvrir la théorie complète</h3>
+      <p style="text-align:center; max-width:740px; margin: .2rem auto 1.2rem; color:var(--ink-dim)">
+        Le livre détaille la formulation formelle, les pistes expérimentales et les implications philosophiques.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://exemple.amazon/ton-livre" rel="nofollow noopener" target="_blank">📖 Commander le livre complet</a>
+        <a class="btn" href="/pdf-explicatif-zm.pdf" target="_blank" rel="noopener">📄 Télécharger le PDF explicatif</a>
+        <a class="btn" href="mailto:mzerrouk95@gmail.com">✉️ Contact (collaboration)</a>
+      </div>
+    </section>
+
+    <!-- Conclusion philo brève -->
+    <section aria-labelledby="philo">
+      <h3 id="philo" class="section-title">Une pensée pour conclure</h3>
+      <p style="text-align:center; font-style:italic; color:#cfe0ff">
+        Nous ne sommes pas de simples observateurs : nous sommes des <em>motifs vivants</em> d’un langage cosmique.
+        Si l’univers existe, c’est peut-être que l’infini informationnel cherche à se connaître — et que nous en sommes les phrases.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <footer class="contact" role="contentinfo">
       <p><strong>Pour tout contact collaboratif relatif à la théorie :</strong></p>
-      <p>Mohammed ZERROUK</p>
-      <p>Email : mzerrouk95@gmail.com</p>
-      <p>HAL ID : hal-05186131v1</p>
-    </div>
-  </div>
+      <p>Mohammed ZERROUK — <a href="mailto:mzerrouk95@gmail.com">mzerrouk95@gmail.com</a></p>
+      <p>HAL ID : <a href="https://hal.science/hal-05186131v1" target="_blank" rel="noopener">hal-05186131v1</a></p>
+    </footer>
+  </main>
 
+  <!-- Fond étoilé (inchangé, optimisé) -->
   <script>
-    // Canvases
     const far = document.getElementById('stars-far');
     const near = document.getElementById('stars-near');
     const cFar = far.getContext('2d');
     const cNear = near.getContext('2d');
 
-    // Hi-DPI safe sizing
     function sizeCanvas(canvas){
       const ratio = Math.max(window.devicePixelRatio || 1, 1);
       canvas.style.width  = window.innerWidth + 'px';
@@ -241,26 +399,19 @@
       ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
     }
 
-    let W = 0, H = 0, raf = 0;
+    let W=0, H=0, raf=0;
     function fit(){
-      sizeCanvas(far);
-      sizeCanvas(near);
-      W = window.innerWidth;
-      H = window.innerHeight;
-      initStars();
-      if (mq.matches){ renderStatic(); }
+      sizeCanvas(far); sizeCanvas(near);
+      W = window.innerWidth; H = window.innerHeight;
+      initStars(); if (mq.matches){ renderStatic(); }
     }
-    window.addEventListener('resize', () => {
-      clearTimeout(fit._t);
-      fit._t = setTimeout(fit, 120);
-    });
+    window.addEventListener('resize', () => { clearTimeout(fit._t); fit._t = setTimeout(fit, 120); });
 
-    // Stars state
-    let starsFar = [], starsNear = [], shooting = [];
+    let starsFar=[], starsNear=[], shooting=[];
     function initStars(){
-      const density = Math.max(1, Math.min(2.2, (W*H) / (1200*800)));
-      const countFar  = Math.floor(320 * density);
-      const countNear = Math.floor(200 * density);
+      const density = Math.max(1, Math.min(2.4, (W*H)/(1200*800)));
+      const countFar  = Math.floor(360 * density);
+      const countNear = Math.floor(240 * density);
       starsFar = createStars(countFar, 0.7, 1.6, 0.012);
       starsNear = createStars(countNear, 1.0, 2.1, 0.018);
       shooting = [];
@@ -268,11 +419,10 @@
 
     function createStars(count, rMin, rMax, speed){
       const arr = [];
-      for(let i=0; i<count; i++){
+      for(let i=0;i<count;i++){
         arr.push({
-          x: Math.random()*W,
-          y: Math.random()*H,
-          r: rMin + Math.random()*(rMax - rMin),
+          x: Math.random()*W, y: Math.random()*H,
+          r: rMin + Math.random()*(rMax-rMin),
           a: 0.25 + Math.random()*0.75,
           tw: 0.004 + Math.random()*0.01,
           vx: (Math.random()-0.5)*speed,
@@ -283,20 +433,17 @@
     }
 
     function drawLayer(ctx, stars, glow){
-      ctx.clearRect(0, 0, W, H);
+      ctx.clearRect(0,0,W,H);
       for(const s of stars){
         s.a += (Math.random()-0.5)*s.tw;
-        if(s.a < 0.16) s.a = 0.16;
-        if(s.a > 1.00) s.a = 1.00;
-
+        if(s.a<0.16) s.a=0.16; if(s.a>1.0) s.a=1.0;
         s.x += s.vx; s.y += s.vy;
-        if(s.x < 0) s.x = W; if(s.x > W) s.x = 0;
-        if(s.y < 0) s.y = H; if(s.y > H) s.y = 0;
-
+        if(s.x<0) s.x=W; if(s.x>W) s.x=0;
+        if(s.y<0) s.y=H; if(s.y>H) s.y=0;
         ctx.save();
         ctx.globalAlpha = s.a;
         ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
         ctx.fillStyle = '#ffffff';
         ctx.shadowColor = glow;
         ctx.shadowBlur = 16;
@@ -308,73 +455,33 @@
     function maybeShoot(){
       if(Math.random() < 0.006 && shooting.length < 2){
         const startY = Math.random()*H*0.6 + H*0.1;
-        shooting.push({
-          x: Math.random()*W*0.8 + W*0.1,
-          y: startY,
-          vx: -2 - Math.random()*2,
-          vy: -0.6 - Math.random()*0.6,
-          life: 1
-        });
+        shooting.push({ x: Math.random()*W*0.8 + W*0.1, y:startY, vx:-2-Math.random()*2, vy:-0.6-Math.random()*0.6, life:1 });
       }
     }
-
     function drawShooting(ctx){
-      for(let i=shooting.length-1; i>=0; i--){
+      for(let i=shooting.length-1;i>=0;i--){
         const sh = shooting[i];
         ctx.save();
         const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x - sh.vx*22, sh.y - sh.vy*22);
         grad.addColorStop(0, `rgba(255,255,255,${0.88*sh.life})`);
         grad.addColorStop(1, `rgba(180,220,255,0)`);
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.6;
-        ctx.beginPath();
-        ctx.moveTo(sh.x, sh.y);
-        ctx.lineTo(sh.x - sh.vx*22, sh.y - sh.vy*22);
-        ctx.stroke();
+        ctx.strokeStyle = grad; ctx.lineWidth = 1.6;
+        ctx.beginPath(); ctx.moveTo(sh.x,sh.y); ctx.lineTo(sh.x - sh.vx*22, sh.y - sh.vy*22); ctx.stroke();
         ctx.restore();
-
-        sh.x += sh.vx; sh.y += sh.vy;
-        sh.life -= 0.02;
-        if(sh.life <= 0 || sh.x < -50 || sh.y < -50) shooting.splice(i,1);
+        sh.x += sh.vx; sh.y += sh.vy; sh.life -= 0.02;
+        if(sh.life<=0 || sh.x<-50 || sh.y<-50) shooting.splice(i,1);
       }
     }
 
-    function renderStatic(){
-      drawLayer(cFar, starsFar, '#bcd7ff');
-      drawLayer(cNear, starsNear, '#d9ecff');
-    }
+    function renderStatic(){ drawLayer(cFar, starsFar, '#bcd7ff'); drawLayer(cNear, starsNear, '#d9ecff'); }
+    function loop(){ drawLayer(cFar, starsFar, '#bcd7ff'); drawLayer(cNear, starsNear, '#d9ecff'); maybeShoot(); drawShooting(cNear); raf = requestAnimationFrame(loop); }
 
-    function loop(){
-      drawLayer(cFar, starsFar, '#bcd7ff');
-      drawLayer(cNear, starsNear, '#d9ecff');
-      maybeShoot();
-      drawShooting(cNear);
-      raf = requestAnimationFrame(loop);
-    }
-
-    // Accessibilité animations
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    function motionHandler(e){
-      if(e.matches){
-        cancelAnimationFrame(raf);
-        renderStatic();
-      }else{
-        cancelAnimationFrame(raf);
-        loop();
-      }
-    }
-    if (mq.addEventListener) mq.addEventListener('change', motionHandler);
-    else mq.addListener(motionHandler);
+    function motionHandler(e){ if(e.matches){ cancelAnimationFrame(raf); renderStatic(); } else { cancelAnimationFrame(raf); loop(); } }
+    if (mq.addEventListener) mq.addEventListener('change', motionHandler); else mq.addListener(motionHandler);
 
-    // Lancement
-    fit();
-    if (!mq.matches) loop();
-    else renderStatic();
-
-    // Garde-fou : log si contexte 2D indisponible
-    if(!cFar || !cNear){
-      console.warn('Canvas 2D non disponible (contexte null). Vérifie que ton navigateur n’active pas un bloqueur.');
-    }
+    fit(); if(!mq.matches) loop(); else renderStatic();
+    if(!cFar || !cNear){ console.warn('Canvas 2D non disponible (contexte null).'); }
   </script>
 </body>
 </html>
