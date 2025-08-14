@@ -457,5 +457,22 @@
       console.warn('Canvas 2D non disponible (contexte null). Vérifie les bloqueurs.');
     }
   </script>
+  <span id="contact-mail"></span>
+<script>
+  // Évite que les robots lisent l'adresse dans le HTML
+  (function () {
+    const p1 = "zmtheorie";
+    const p2 = "gmail";
+    const p3 = "com";
+    const addr = p1 + "@" + p2 + "." + p3;
+
+    const span = document.getElementById("contact-mail");
+    const a = document.createElement("a");
+    a.href = "mailto:" + addr + "?subject=Contact%20Théorie%20ZM";
+    a.textContent = "📧 " + addr;
+    a.setAttribute("aria-label", "Envoyer un e-mail à " + addr);
+    span.appendChild(a);
+  })();
+</script>
 </body>
 </html>
