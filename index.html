@@ -76,34 +76,37 @@
     html, body{
       margin:0; padding:0; height:100%;
       font-family:"Georgia", serif;
-      background:#060813; color:#f2f2f2;
+      background:#03050d; color:#f2f2f2;
       line-height:1.7; overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       text-rendering:optimizeLegibility;
     }
-    /* Fond nébuleuse + étoiles */
+    /* Fond nébuleuse + galaxies fixes pour la profondeur */
     #nebula{
       position:fixed; inset:0; z-index:0; pointer-events:none;
       background:
-        radial-gradient(1200px 800px at 70% 30%, rgba(30,60,120,0.35), transparent 65%),
-        radial-gradient(900px 900px at 25% 75%, rgba(110,40,160,0.22), transparent 55%),
-        radial-gradient(1600px 1200px at 10% 10%, rgba(10,20,40,0.35), transparent 70%),
-        linear-gradient(180deg, #060813 0%, #0a0f20 60%, #060813 100%);
-      filter:saturate(1.06) contrast(1.06) brightness(0.96);
+        radial-gradient(1400px 1000px at 70% 30%, rgba(40,70,160,0.45), transparent 65%),
+        radial-gradient(1000px 1000px at 25% 75%, rgba(160,60,200,0.35), transparent 55%),
+        radial-gradient(1800px 1400px at 10% 10%, rgba(20,30,60,0.45), transparent 70%),
+        radial-gradient(650px 650px at 78% 62%, rgba(255,220,180,0.12), transparent 70%), /* halo galaxie */
+        radial-gradient(520px 520px at 32% 18%, rgba(180,200,255,0.14), transparent 70%), /* halo bleu */
+        radial-gradient(420px 420px at 18% 84%, rgba(200,180,255,0.10), transparent 70%), /* halo violet pâle */
+        linear-gradient(180deg, #03050d 0%, #060813 50%, #0a0f20 100%);
+      filter:saturate(1.18) contrast(1.1) brightness(1.02);
       will-change:transform;
     }
     canvas.starfield{
       position:fixed; top:0; left:0; width:100vw; height:100vh;
       display:block; pointer-events:none;
     }
-    #stars-far{ z-index:1; opacity:.92; }
-    #stars-near{ z-index:2; opacity:.97; }
+    #stars-far{ z-index:1; opacity:.95; }
+    #stars-near{ z-index:2; opacity:.98; }
 
     /* Contenu */
     .content{
       max-width:960px; margin:0 auto; padding:2rem 2.5rem;
-      background:rgba(14,16,26,0.62);
+      background:rgba(14,16,26,0.6);
       border-radius:16px; box-shadow:0 0 32px 0 #10101A88;
       position:relative; z-index:10;
       backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px);
@@ -337,7 +340,7 @@
     </div>
   </div>
 
-  <!-- Étoiles animées -->
+  <!-- Étoiles animées multicolores -->
   <script>
     const far = document.getElementById('stars-far');
     const near = document.getElementById('stars-near');
@@ -368,36 +371,62 @@
       fit._t = setTimeout(fit, 120);
     });
 
+    // Palette d'étoiles (probabilités approximatives)
+    const STAR_COLORS = [
+      { color:'#cfe5ff', glow:'#cfe5ff', p:0.28 }, // blanc-bleuté (A/F)
+      { color:'#b9d3ff', glow:'#cfe5ff', p:0.22 }, // bleu (B)
+      { color:'#fff6cf', glow:'#ffe9a6', p:0.28 }, // jaune (G)
+      { color:'#ffd1b1', glow:'#ffd7c0', p:0.14 }, // orange (K)
+      { color:'#ffb3a1', glow:'#ffb3a1', p:0.08 }  // rouge (M)
+    ];
+    function pickStarColor(){
+      const r = Math.random();
+      let acc = 0;
+      for(const s of STAR_COLORS){
+        acc += s.p;
+        if(r <= acc) return {fill:s.color, glow:s.glow};
+      }
+      return {fill:'#ffffff', glow:'#d9ecff'};
+    }
+
     let starsFar = [], starsNear = [], shooting = [];
     function initStars(){
-      const density = Math.max(1, Math.min(2.4, (W*H) / (1200*800)));
-      const countFar  = Math.floor(360 * density);
-      const countNear = Math.floor(240 * density);
-      starsFar = createStars(countFar, 0.7, 1.6, 0.012);
-      starsNear = createStars(countNear, 1.0, 2.1, 0.018);
+      const density = Math.max(1.6, Math.min(3.4, (W*H) / (1000*700)));
+      const countFar  = Math.floor(620 * density);   // plus d'étoiles lointaines
+      const countNear = Math.floor(420 * density);   // plus d'étoiles proches
+      starsFar = createStars(countFar, 0.6, 1.5, 0.010);
+      starsNear = createStars(countNear, 1.2, 2.6, 0.018);
       shooting = [];
     }
+
     function createStars(count, rMin, rMax, speed){
       const arr = [];
       for(let i=0; i<count; i++){
+        const c = pickStarColor();
         arr.push({
           x: Math.random()*W,
           y: Math.random()*H,
           r: rMin + Math.random()*(rMax - rMin),
-          a: 0.25 + Math.random()*0.75,
-          tw: 0.004 + Math.random()*0.01,
+          a: 0.22 + Math.random()*0.78,
+          tw: 0.004 + Math.random()*0.012,
           vx: (Math.random()-0.5)*speed,
-          vy: (Math.random)-0.5*speed
+          vy: (Math.random()-0.5)*speed,  // corrigé
+          fill: c.fill,
+          glow: c.glow
         });
       }
       return arr;
     }
-    function drawLayer(ctx, stars, glow){
+
+    function drawLayer(ctx, stars){
       ctx.clearRect(0, 0, W, H);
       for(const s of stars){
+        // scintillement léger
         s.a += (Math.random()-0.5)*s.tw;
         if(s.a < 0.16) s.a = 0.16;
         if(s.a > 1.00) s.a = 1.00;
+
+        // déplacement très lent
         s.x += s.vx; s.y += s.vy;
         if(s.x < 0) s.x = W; if(s.x > W) s.x = 0;
         if(s.y < 0) s.y = H; if(s.y > H) s.y = 0;
@@ -406,13 +435,14 @@
         ctx.globalAlpha = s.a;
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-        ctx.fillStyle = '#ffffff';
-        ctx.shadowColor = glow;
-        ctx.shadowBlur = 16;
+        ctx.fillStyle = s.fill;
+        ctx.shadowColor = s.glow;
+        ctx.shadowBlur = 14 + s.r*3;
         ctx.fill();
         ctx.restore();
       }
     }
+
     function maybeShoot(){
       if(Math.random() < 0.006 && shooting.length < 2){
         const startY = Math.random()*H*0.6 + H*0.1;
@@ -430,7 +460,7 @@
         const sh = shooting[i];
         ctx.save();
         const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x - sh.vx*22, sh.y - sh.vy*22);
-        grad.addColorStop(0, `rgba(255,255,255,${0.88*sh.life})`);
+        grad.addColorStop(0, `rgba(255,255,255,${0.90*sh.life})`);
         grad.addColorStop(1, `rgba(180,220,255,0)`);
         ctx.strokeStyle = grad;
         ctx.lineWidth = 1.6;
@@ -445,13 +475,14 @@
         if(sh.life <= 0 || sh.x < -50 || sh.y < -50) shooting.splice(i,1);
       }
     }
+
     function renderStatic(){
-      drawLayer(cFar, starsFar, '#bcd7ff');
-      drawLayer(cNear, starsNear, '#d9ecff');
+      drawLayer(cFar, starsFar);
+      drawLayer(cNear, starsNear);
     }
     function loop(){
-      drawLayer(cFar, starsFar, '#bcd7ff');
-      drawLayer(cNear, starsNear, '#d9ecff');
+      drawLayer(cFar, starsFar);
+      drawLayer(cNear, starsNear);
       maybeShoot();
       drawShooting(cNear);
       raf = requestAnimationFrame(loop);
@@ -511,7 +542,7 @@
   }
   </script>
 
-  <!-- Adresse mail en texte progressif si besoin
+  <!-- Adresse mail progressive si besoin (désactivé)
   <span id="contact-mail"></span>
   <script>
     (function () {
