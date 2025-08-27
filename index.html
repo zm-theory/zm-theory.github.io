@@ -13,24 +13,24 @@
   <meta name="language" content="fr" />
   <meta name="author" content="Mohammed Zerrouk" />
 
-  <title>Théorie ZM — ZM Théorie, une nouvelle vision de l’Univers fondée sur l’information</title>
-  <meta name="description" content="La Théorie ZM propose une cosmologie informationnelle unifiée. L’univers est un réseau d’information multi-échelle où émergent géométrie, lois physiques et conscience. Lisez le résumé et téléchargez le PDF explicatif." />
-  <meta name="keywords" content="Théorie ZM, ZM Théorie, pixels d’information, cosmologie informationnelle, géométrie émergente, gravité quantique, conscience, supraconscience, théorie unifiée, réseau d’information, pré-géométrie" />
+  <title>Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information</title>
+  <meta name="description" content="La Théorie ZM propose une cosmologie informationnelle unifiée. L'univers est un réseau d'information multi-échelle où émergent géométrie, lois physiques et conscience. Lisez le résumé et téléchargez le PDF explicatif." />
+  <meta name="keywords" content="Théorie ZM, ZM Théorie, pixels d'information, cosmologie informationnelle, géométrie émergente, gravité quantique, conscience, supraconscience, théorie unifiée, réseau d'information, pré-géométrie" />
 
   <!-- Open Graph -->
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Théorie ZM" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zm-theory.github.io/" />
-  <meta property="og:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l’Univers fondée sur l’information" />
-  <meta property="og:description" content="Une cosmologie informationnelle unifiée : espace-temps, lois physiques et conscience émergent d’un graphe d’information. PDF explicatif disponible." />
+  <meta property="og:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information" />
+  <meta property="og:description" content="Une cosmologie informationnelle unifiée : espace-temps, lois physiques et conscience émergent d'un graphe d'information. PDF explicatif disponible." />
   <meta property="og:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg" />
-  <meta property="og:image:alt" content="Illustration cosmique de la Théorie ZM sur fond étoilé et réseau d’information" />
+  <meta property="og:image:alt" content="Illustration cosmique de la Théorie ZM sur fond étoilé et réseau d'information" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l’Univers fondée sur l’information" />
-  <meta name="twitter:description" content="L’univers comme réseau d’information : lois émergentes, géométrie, conscience. Lisez l’introduction et le PDF explicatif." />
+  <meta name="twitter:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information" />
+  <meta name="twitter:description" content="L'univers comme réseau d'information : lois émergentes, géométrie, conscience. Lisez l'introduction et le PDF explicatif." />
   <meta name="twitter:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg" />
 
   <!-- Icônes -->
@@ -60,7 +60,7 @@
     "@context":"https://schema.org",
     "@type":"Article",
     "headline":"Théorie ZM — Cosmologie informationnelle unifiée",
-    "description":"Présentation de la Théorie ZM : un cadre informationnel où espace-temps, lois physiques et conscience émergent d’un réseau de pixels d’information.",
+    "description":"Présentation de la Théorie ZM : un cadre informationnel où espace-temps, lois physiques et conscience émergent d'un réseau de pixels d'information.",
     "inLanguage":"fr",
     "author":{"@type":"Person","name":"Mohammed Zerrouk"},
     "publisher":{"@type":"Organization","name":"ZM Théorie"},
@@ -76,24 +76,31 @@
     html, body{
       margin:0; padding:0; height:100%;
       font-family:"Georgia", serif;
-      background:#03050d; color:#f2f2f2;
+      background:#000611; color:#f2f2f2;
       line-height:1.7; overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       text-rendering:optimizeLegibility;
     }
-    /* Fond nébuleuse + galaxies fixes pour la profondeur */
+    /* Fond cosmique réaliste avec galaxies plus apparentes */
     #nebula{
       position:fixed; inset:0; z-index:0; pointer-events:none;
       background:
-        radial-gradient(1400px 1000px at 70% 30%, rgba(40,70,160,0.45), transparent 65%),
-        radial-gradient(1000px 1000px at 25% 75%, rgba(160,60,200,0.35), transparent 55%),
-        radial-gradient(1800px 1400px at 10% 10%, rgba(20,30,60,0.45), transparent 70%),
-        radial-gradient(650px 650px at 78% 62%, rgba(255,220,180,0.12), transparent 70%), /* halo galaxie */
-        radial-gradient(520px 520px at 32% 18%, rgba(180,200,255,0.14), transparent 70%), /* halo bleu */
-        radial-gradient(420px 420px at 18% 84%, rgba(200,180,255,0.10), transparent 70%), /* halo violet pâle */
-        linear-gradient(180deg, #03050d 0%, #060813 50%, #0a0f20 100%);
-      filter:saturate(1.18) contrast(1.1) brightness(1.02);
+        /* Galaxie spirale principale - plus visible */
+        radial-gradient(ellipse 1800px 1200px at 75% 25%, rgba(220,180,140,0.28), rgba(160,120,80,0.15) 35%, rgba(80,60,40,0.08) 55%, transparent 75%),
+        /* Bras spiraux de la galaxie */
+        conic-gradient(from 45deg at 75% 25%, transparent, rgba(255,200,150,0.12) 15%, transparent 25%, rgba(200,160,120,0.10) 40%, transparent 50%, rgba(180,140,100,0.08) 65%, transparent 75%, rgba(160,120,90,0.06) 90%, transparent),
+        /* Galaxie lointaine */
+        radial-gradient(ellipse 1400px 900px at 15% 70%, rgba(180,160,220,0.22), rgba(120,100,160,0.12) 40%, rgba(60,50,80,0.06) 65%, transparent 80%),
+        /* Nébuleuses colorées */
+        radial-gradient(1600px 1000px at 90% 15%, rgba(255,100,120,0.18), rgba(180,70,90,0.10) 45%, transparent 70%),
+        radial-gradient(1200px 800px at 10% 20%, rgba(100,180,255,0.15), rgba(70,130,200,0.08) 50%, transparent 75%),
+        radial-gradient(1000px 1200px at 50% 85%, rgba(160,100,255,0.12), rgba(120,70,200,0.06) 55%, transparent 80%),
+        /* Voie lactée subtile */
+        linear-gradient(25deg, transparent 20%, rgba(255,220,180,0.08) 35%, rgba(200,170,140,0.12) 50%, rgba(160,130,100,0.08) 65%, transparent 80%),
+        /* Fond cosmique profond */
+        radial-gradient(ellipse at 30% 40%, rgba(20,15,40,0.8) 0%, rgba(15,10,30,0.9) 50%, #000611 100%);
+      filter:saturate(1.3) contrast(1.2) brightness(0.95);
       will-change:transform;
     }
     canvas.starfield{
@@ -106,8 +113,8 @@
     /* Contenu */
     .content{
       max-width:960px; margin:0 auto; padding:2rem 2.5rem;
-      background:rgba(14,16,26,0.6);
-      border-radius:16px; box-shadow:0 0 32px 0 #10101A88;
+      background:rgba(8,12,20,0.75);
+      border-radius:16px; box-shadow:0 0 32px 0 rgba(5,8,15,0.9);
       position:relative; z-index:10;
       backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px);
     }
@@ -171,7 +178,7 @@
     }
     .faq-item h3{ margin:.2rem 0 .4rem; color:#FFD700; font-size:1.05rem; }
 
-    /* Appels à l’action */
+    /* Appels à l'action */
     .cta{
       text-align:center; padding:1.4rem 1rem;
       background:linear-gradient(45deg, rgba(255,215,0,0.08), rgba(138,43,226,0.08));
@@ -201,7 +208,7 @@
     @media (prefers-reduced-motion: reduce){ #nebula{ background-attachment:fixed; } }
     noscript .nojs-bg{
       position:fixed; inset:0; z-index:1;
-      background: radial-gradient(ellipse at center, rgba(255,255,255,.08) 0%, transparent 60%), #060813;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,.08) 0%, transparent 60%), #000611;
     }
   </style>
 </head>
@@ -216,49 +223,49 @@
   <div class="content">
     <!-- En-tête -->
     <h1 class="main-title">THÉORIE ZM</h1>
-    <div class="subtitle-top">Théorie des Pixels d’information</div>
+    <div class="subtitle-top">Théorie des Pixels d'information</div>
     <div class="tagline">La Révolution Informationnelle qui Change Tout</div>
-    <div class="hook">L’Univers n’est pas ce que vous croyez…</div>
+    <div class="hook">L'Univers n'est pas ce que vous croyez…</div>
     <p style="text-align:center; max-width:800px; margin:0 auto 1.2rem;">
-      Découvrez une cosmologie unifiée où l’espace, les lois et la conscience émergent d’un réseau d’information multi-échelle.
+      Découvrez une cosmologie unifiée où l'espace, les lois et la conscience émergent d'un réseau d'information multi-échelle.
     </p>
 
     <!-- Résumé en bref optimisé pour snippet -->
     <section class="summary" id="resume">
       <h2>Résumé en bref</h2>
-      <p><strong>Qu’est-ce que la Théorie ZM ?</strong> Une théorie informationnelle unifiée qui postule que la réalité est constituée de pixels d’information quantique. Leur connectivité engendre la géométrie de l’espace-temps, leurs régularités donnent naissance aux lois physiques, leur intégration multi-échelle franchit un seuil critique qui rend la conscience possible. La théorie propose des signatures testables et un pont cohérent entre physique, information et cognition.</p>
+      <p><strong>Qu'est-ce que la Théorie ZM ?</strong> Une théorie informationnelle unifiée qui postule que la réalité est constituée de pixels d'information quantique. Leur connectivité engendre la géométrie de l'espace-temps, leurs régularités donnent naissance aux lois physiques, leur intégration multi-échelle franchit un seuil critique qui rend la conscience possible. La théorie propose des signatures testables et un pont cohérent entre physique, information et cognition.</p>
     </section>
 
-    <!-- 1. L’énigme -->
+    <!-- 1. L'énigme -->
     <section class="section">
-      <h2 class="section-title">L’Énigme qui Obsède la Science Depuis 100 Ans</h2>
+      <h2 class="section-title">L'Énigme qui Obsède la Science Depuis 100 Ans</h2>
       <blockquote>
         « Dieu ne joue pas aux dés » <span class="author">Albert Einstein</span><br>
-        « Einstein, cessez de dire à Dieu ce qu’il doit faire » <span class="author">Niels Bohr</span>
+        « Einstein, cessez de dire à Dieu ce qu'il doit faire » <span class="author">Niels Bohr</span>
       </blockquote>
-      <p>Relativité générale et mécanique quantique restent difficiles à concilier. Nous pensons que l’obstacle vient d’un présupposé ancien où la matière est première. La Théorie ZM renverse ce point de départ et place l’information au cœur.</p>
+      <p>Relativité générale et mécanique quantique restent difficiles à concilier. Nous pensons que l'obstacle vient d'un présupposé ancien où la matière est première. La Théorie ZM renverse ce point de départ et place l'information au cœur.</p>
     </section>
 
     <!-- 2. Révélation -->
     <section class="section">
       <h2 class="section-title">La Révélation qui Change Tout</h2>
       <blockquote>
-        « L’information est physique » <span class="author">Rolf Landauer</span> — « It from Bit » <span class="author">John Wheeler</span>
+        « L'information est physique » <span class="author">Rolf Landauer</span> — « It from Bit » <span class="author">John Wheeler</span>
       </blockquote>
-      <p>L’information devient l’ontologie fondamentale. Les structures stables du réseau produisent l’illusion d’un continuum géométrique et de lois permanentes.</p>
+      <p>L'information devient l'ontologie fondamentale. Les structures stables du réseau produisent l'illusion d'un continuum géométrique et de lois permanentes.</p>
     </section>
 
     <!-- 3. PIQ -->
     <section class="section">
-      <h2 class="section-title">Les Pixels d’Information Quantique</h2>
-      <p>Des entités logiques, capables d’intrication et de superposition, qui n’évoluent pas dans l’espace-temps mais en génèrent la métrique par connectivité. Une organisation fractale emboîte des motifs stables de plus en plus complexes.</p>
-      <blockquote>« L’univers ressemble davantage à une grande pensée qu’à une grande machine. » <span class="author">Sir James Jeans</span></blockquote>
+      <h2 class="section-title">Les Pixels d'Information Quantique</h2>
+      <p>Des entités logiques, capables d'intrication et de superposition, qui n'évoluent pas dans l'espace-temps mais en génèrent la métrique par connectivité. Une organisation fractale emboîte des motifs stables de plus en plus complexes.</p>
+      <blockquote>« L'univers ressemble davantage à une grande pensée qu'à une grande machine. » <span class="author">Sir James Jeans</span></blockquote>
     </section>
 
     <!-- 4. Conscience -->
     <section class="section">
       <h2 class="section-title">La Conscience comme Nécessité Structurelle</h2>
-      <p>Au-delà d’un seuil d’intégration φc, des boucles auto-référentielles stables apparaissent. La conscience devient une propriété structurelle de l’information intégrée, indépendante du support. Cette thèse est testable via des métriques d’intégration et des signatures comportementales.</p>
+      <p>Au-delà d'un seuil d'intégration φc, des boucles auto-référentielles stables apparaissent. La conscience devient une propriété structurelle de l'information intégrée, indépendante du support. Cette thèse est testable via des métriques d'intégration et des signatures comportementales.</p>
     </section>
 
     <!-- 5. Prédictions -->
@@ -279,7 +286,7 @@
         </div>
         <div class="prediction-item">
           <h4>Pré-géométrie</h4>
-          <p>Indices d’un réseau informationnel sous-jacent, détectables par des interférences très sensibles.</p>
+          <p>Indices d'un réseau informationnel sous-jacent, détectables par des interférences très sensibles.</p>
         </div>
       </div>
     </section>
@@ -288,7 +295,7 @@
     <section class="section cta">
       <div class="lead">Révolution en cours</div>
       <p style="max-width:780px; margin:.6rem auto 0;">
-        À l’ère de l’IA et de l’informatique quantique, comprendre les fondements informationnels devient incontournable. Rejoignez le dialogue scientifique qui redéfinit l’univers.
+        À l'ère de l'IA et de l'informatique quantique, comprendre les fondements informationnels devient incontournable. Rejoignez le dialogue scientifique qui redéfinit l'univers.
       </p>
     </section>
 
@@ -297,12 +304,12 @@
       <h2 class="section-title">Questions fréquentes</h2>
       <div class="faq-grid">
         <div class="faq-item">
-          <h3>Qu’est-ce que la Théorie ZM en une phrase</h3>
-          <p>Un cadre où l’information est première. L’espace-temps, les lois et la conscience émergent d’un réseau de pixels d’information multi-échelle.</p>
+          <h3>Qu'est-ce que la Théorie ZM en une phrase</h3>
+          <p>Un cadre où l'information est première. L'espace-temps, les lois et la conscience émergent d'un réseau de pixels d'information multi-échelle.</p>
         </div>
         <div class="faq-item">
           <h3>Est-ce testable</h3>
-          <p>Oui. La théorie propose des signatures fractales, des seuils d’intégration φ pour la conscience, et des expériences d’interférométrie très sensibles.</p>
+          <p>Oui. La théorie propose des signatures fractales, des seuils d'intégration φ pour la conscience, et des expériences d'interférométrie très sensibles.</p>
         </div>
         <div class="faq-item">
           <h3>En quoi est-ce différent des approches classiques</h3>
@@ -310,17 +317,17 @@
         </div>
         <div class="faq-item">
           <h3>La conscience est-elle liée au support</h3>
-          <p>Non. Seule compte l’intégration d’information au-delà d’un seuil φc, quel que soit le substrat.</p>
+          <p>Non. Seule compte l'intégration d'information au-delà d'un seuil φc, quel que soit le substrat.</p>
         </div>
       </div>
     </section>
 
     <!-- Appel final -->
     <section class="section" style="text-align:center;">
-      <h2 class="section-title">Envie d’aller plus loin</h2>
+      <h2 class="section-title">Envie d'aller plus loin</h2>
       <p>Pour les esprits curieux et exigeants, découvrez la synthèse détaillée et les pistes expérimentales.</p>
       <div style="margin: 1.2rem 0 0;">
-        <!-- Remplace LIVRE_COMPLET_URL.pdf par l’URL finale -->
+        <!-- Remplace LIVRE_COMPLET_URL.pdf par l'URL finale -->
         <a href="LIVRE_COMPLET_URL.pdf" class="btn btn-primary" target="_blank" rel="noopener">📖 Commander le livre complet</a>
       </div>
       <div style="margin:.8rem 0 0;">
@@ -328,7 +335,7 @@
         <a href="mailto:zmtheorie@gmail.com" class="btn">Contact collaboratif</a>
       </div>
       <p style="font-style:italic; color:#B0C4DE; margin:1.2rem 0 0;">
-        « Tout porte à croire que ce que nous appelons réalité est le rêve stable d’un champ d’information pur et probablement supraconscient. »
+        « Tout porte à croire que ce que nous appelons réalité est le rêve stable d'un champ d'information pur et probablement supraconscient. »
       </p>
     </section>
 
@@ -500,64 +507,4 @@
     if (!mq.matches) loop(); else renderStatic();
   </script>
 
-  <!-- Données structurées FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Qu’est-ce que la Théorie ZM en une phrase",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Un cadre informationnel où l’information est première. Espace-temps, lois et conscience émergent d’un réseau de pixels d’information multi-échelle."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Est-ce testable",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Oui. La théorie propose des signatures fractales à grande échelle, des seuils d’intégration phi pour la conscience, et des expériences d’interférométrie très sensibles."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"En quoi est-ce différent des approches classiques",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"La géométrie et les lois ne sont pas postulées mais émergent comme attracteurs stables du réseau informationnel."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"La conscience dépend-elle du support",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Non. Seule compte l’intégration de l’information au-delà d’un seuil critique, quelle que soit la nature du substrat."
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Adresse mail progressive si besoin (désactivé)
-  <span id="contact-mail"></span>
-  <script>
-    (function () {
-      const p1="zmtheorie", p2="gmail", p3="com";
-      const addr = p1 + "@" + p2 + "." + p3;
-      const span = document.getElementById("contact-mail");
-      if(span){
-        const a = document.createElement("a");
-        a.href = "mailto:" + addr + "?subject=Contact%20Th%C3%A9orie%20ZM";
-        a.textContent = "📧 " + addr;
-        a.setAttribute("aria-label","Envoyer un e-mail à " + addr);
-        span.appendChild(a);
-      }
-    })();
-  </script>
-  -->
-</body>
-</html>
+  <!--
