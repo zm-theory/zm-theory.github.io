@@ -13,23 +13,24 @@
   <meta name="language" content="fr" />
   <meta name="author" content="Mohammed Zerrouk" />
 
-  <title>Théorie ZM — Cadre Informationnel Unifié pour la Physique Fondamentale</title>
-  <meta name="description" content="La Théorie ZM propose un formalisme où espace-temps, lois physiques et conscience émergent d'un réseau d'information quantique. 12 prédictions testables. Référencé HAL-CNRS." />
-  <meta name="keywords" content="Théorie ZM, pixels d'information quantique, cosmologie informationnelle, géométrie émergente, gravité quantique, conscience, théorie unifiée, HAL CNRS" />
+  <title>Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information</title>
+  <meta name="description" content="La Théorie ZM propose une cosmologie informationnelle unifiée. L'univers est un réseau d'information multi-échelle où émergent géométrie, lois physiques et conscience. Lisez le résumé et téléchargez le PDF explicatif." />
+  <meta name="keywords" content="Théorie ZM, ZM Théorie, pixels d'information, cosmologie informationnelle, géométrie émergente, gravité quantique, conscience, supraconscience, théorie unifiée, réseau d'information, pré-géométrie" />
 
   <!-- Open Graph -->
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:site_name" content="Théorie ZM" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zm-theory.github.io/" />
-  <meta property="og:title" content="Théorie ZM — Cadre Informationnel Unifié pour la Physique Fondamentale" />
-  <meta property="og:description" content="Formalisme unifié : espace-temps, lois physiques et conscience émergent d'un réseau d'information quantique. Prédictions testables disponibles." />
+  <meta property="og:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information" />
+  <meta property="og:description" content="Une cosmologie informationnelle unifiée : espace-temps, lois physiques et conscience émergent d'un graphe d'information. PDF explicatif disponible." />
   <meta property="og:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg" />
+  <meta property="og:image:alt" content="Illustration cosmique de la Théorie ZM sur fond étoilé et réseau d'information" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Théorie ZM — Cadre Informationnel Unifié pour la Physique Fondamentale" />
-  <meta name="twitter:description" content="Formalisme unifié : espace-temps et conscience émergent d'un réseau d'information quantique. 12 prédictions testables." />
+  <meta name="twitter:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information" />
+  <meta name="twitter:description" content="L'univers comme réseau d'information : lois émergentes, géométrie, conscience. Lisez l'introduction et le PDF explicatif." />
   <meta name="twitter:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg" />
 
   <!-- Icônes -->
@@ -37,19 +38,36 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Données structurées -->
+  <!-- Données structurées : WebSite -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"ScholarlyArticle",
-    "headline":"Théorie ZM — Cadre Informationnel Unifié",
-    "description":"Présentation du formalisme ZM où espace-temps, lois physiques et conscience émergent d'un réseau de pixels d'information quantique.",
+    "@type":"WebSite",
+    "name":"Théorie ZM",
+    "url":"https://zm-theory.github.io/",
+    "inLanguage":"fr",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://zm-theory.github.io/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Données structurées : Article -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Théorie ZM — Cosmologie informationnelle unifiée",
+    "description":"Présentation de la Théorie ZM : un cadre informationnel où espace-temps, lois physiques et conscience émergent d'un réseau de pixels d'information.",
     "inLanguage":"fr",
     "author":{"@type":"Person","name":"Mohammed Zerrouk"},
-    "publisher":{"@type":"Organization","name":"HAL Archives Ouvertes"},
-    "datePublished":"2024-12-01",
-    "dateModified":"2025-01-15",
-    "identifier":"hal-05186131v1"
+    "publisher":{"@type":"Organization","name":"ZM Théorie"},
+    "datePublished":"2025-07-01",
+    "dateModified":"2025-07-01",
+    "image":"https://zm-theory.github.io/images/og-theoriezm.jpg",
+    "url":"https://zm-theory.github.io/"
   }
   </script>
 
@@ -58,101 +76,115 @@
     html, body{
       margin:0; padding:0; height:100%;
       font-family:"Georgia", serif;
-      background:#000611; color:#f2f2f2;
+      background:#000; color:#f2f2f2;
       line-height:1.7; overflow-x:hidden;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
       text-rendering:optimizeLegibility;
     }
     
-    /* Fond cosmique réaliste avec galaxies plus apparentes */
-    #nebula{
+    /* Fond image cosmique réelle */
+    #cosmic-bg{
       position:fixed; inset:0; z-index:0; pointer-events:none;
-      background:
-        /* Galaxie spirale principale - plus visible */
-        radial-gradient(ellipse 1800px 1200px at 75% 25%, rgba(220,180,140,0.28), rgba(160,120,80,0.15) 35%, rgba(80,60,40,0.08) 55%, transparent 75%),
-        /* Bras spiraux de la galaxie */
-        conic-gradient(from 45deg at 75% 25%, transparent, rgba(255,200,150,0.12) 15%, transparent 25%, rgba(200,160,120,0.10) 40%, transparent 50%, rgba(180,140,100,0.08) 65%, transparent 75%, rgba(160,120,90,0.06) 90%, transparent),
-        /* Galaxie lointaine */
-        radial-gradient(ellipse 1400px 900px at 15% 70%, rgba(180,160,220,0.22), rgba(120,100,160,0.12) 40%, rgba(60,50,80,0.06) 65%, transparent 80%),
-        /* Nébuleuses colorées */
-        radial-gradient(1600px 1000px at 90% 15%, rgba(255,100,120,0.18), rgba(180,70,90,0.10) 45%, transparent 70%),
-        radial-gradient(1200px 800px at 10% 20%, rgba(100,180,255,0.15), rgba(70,130,200,0.08) 50%, transparent 75%),
-        radial-gradient(1000px 1200px at 50% 85%, rgba(160,100,255,0.12), rgba(120,70,200,0.06) 55%, transparent 80%),
-        /* Voie lactée subtile */
-        linear-gradient(25deg, transparent 20%, rgba(255,220,180,0.08) 35%, rgba(200,170,140,0.12) 50%, rgba(160,130,100,0.08) 65%, transparent 80%),
-        /* Fond cosmique profond */
-        radial-gradient(ellipse at 30% 40%, rgba(20,15,40,0.8) 0%, rgba(15,10,30,0.9) 50%, #000611 100%);
-      filter:saturate(1.3) contrast(1.2) brightness(0.95);
-      will-change:transform;
+      background-image: 
+        /* Image cosmique principale - remplacez par votre URL d'image */
+        url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      
+      /* Overlay pour améliorer la lisibilité */
+      background-color: rgba(0,5,15,0.4);
+      background-blend-mode: multiply;
+      
+      /* Effet de mouvement subtil */
+      animation: cosmicDrift 120s ease-in-out infinite alternate;
     }
-    canvas.starfield{
-      position:fixed; top:0; left:0; width:100vw; height:100vh;
-      display:block; pointer-events:none;
+    
+    @keyframes cosmicDrift {
+      0% { transform: scale(1) translate(0, 0); }
+      100% { transform: scale(1.05) translate(-2%, -1%); }
     }
-    #stars-far{ z-index:1; opacity:.95; }
-    #stars-near{ z-index:2; opacity:.98; }
+    
+    /* Alternative : Si vous voulez plusieurs images qui se superposent */
+    .cosmic-layer-1, .cosmic-layer-2 {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.8;
+    }
+    
+    .cosmic-layer-1 {
+      background-image: url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+      animation: cosmicDrift 100s ease-in-out infinite alternate;
+    }
+    
+    .cosmic-layer-2 {
+      background-image: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2013&q=80');
+      animation: cosmicDrift 140s ease-in-out infinite alternate-reverse;
+      opacity: 0.6;
+      mix-blend-mode: screen;
+    }
 
     /* Contenu */
     .content{
       max-width:960px; margin:0 auto; padding:2rem 2.5rem;
-      background:rgba(8,12,20,0.75);
-      border-radius:16px; box-shadow:0 0 32px 0 rgba(5,8,15,0.9);
+      background:rgba(14,16,26,0.85);
+      border-radius:16px; box-shadow:0 0 40px 0 rgba(0,0,0,0.8);
       position:relative; z-index:10;
-      backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px);
+      backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
     }
-
-    /* En-tête crédibilité */
-    .credentials{
-      text-align:center; margin-bottom:1.5rem; padding:0.8rem 1rem;
-      background:rgba(0,100,200,0.08); border:1px solid rgba(0,150,255,0.15);
-      border-radius:8px; font-size:0.95rem;
-    }
-    .credentials-grid{
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
-      gap:0.5rem; margin-top:0.5rem;
-    }
-    .credential-item{ color:#aad0ff; }
 
     /* Titres */
-    .main-title{ text-align:center; font-size:2.2rem; font-weight:800; letter-spacing:.5px; margin-bottom:0.5rem; }
-    .subtitle-top{ text-align:center; font-size:1.1rem; color:#aad0ff; font-style:italic; margin-bottom:.25rem; }
-    .tagline{ text-align:center; font-size:1.15rem; color:#ffd76b; font-weight:600; margin:.5rem 0 1.2rem; }
-    .hook{ text-align:center; font-size:1.1rem; color:#E6E6FA; margin-bottom:1.2rem; }
+    .main-title{ 
+      text-align:center; font-size:2.2rem; font-weight:800; letter-spacing:.5px; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    .subtitle-top{ 
+      text-align:center; font-size:1.1rem; color:#aad0ff; font-style:italic; margin-bottom:.25rem; 
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+    .tagline{ 
+      text-align:center; font-size:1.2rem; color:#ffd76b; font-weight:700; margin:.5rem 0 1.2rem; 
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+    .hook{ 
+      text-align:center; font-size:1.15rem; color:#E6E6FA; margin-bottom:1.2rem; 
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
 
     /* Sections */
     .section{
       margin:2rem 0; padding:1.2rem 1.2rem;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.15);
       border-radius:14px;
+      backdrop-filter:blur(2px);
     }
     .section-title{
-      text-align:center; font-size:1.4rem; color:#aad0ff; margin:.3rem 0 1rem; font-weight:700;
+      text-align:center; font-size:1.5rem; color:#aad0ff; margin:.3rem 0 1rem; font-weight:700;
     }
     .section p{ margin:.7rem 0; }
 
-    /* Résumé scientifique */
+    /* Résumé en bref */
     .summary{
       margin:1.4rem auto 1.8rem; padding:1rem 1.2rem;
-      background:rgba(0,191,255,0.08); border:1px solid rgba(0,191,255,0.22);
+      background:rgba(0,191,255,0.1); border:1px solid rgba(0,191,255,0.3);
       border-radius:12px; max-width:860px;
+      backdrop-filter:blur(2px);
     }
-    .summary h2{ margin:.2rem 0 .6rem; text-align:center; color:#FFD700; font-size:1.3rem; }
+    .summary h2{ margin:.2rem 0 .6rem; text-align:center; color:#FFD700; font-size:1.35rem; }
 
-    /* Formalisme */
-    .formalism{
-      background:rgba(255,255,255,0.06); padding:0.8rem 1rem;
-      border-radius:8px; margin:1rem 0; font-family:monospace;
-      border-left:3px solid #FFD700; color:#E6E6FA; font-size:0.95rem;
-    }
-
-    /* Blocs et citations */
+    /* Blocks et citations */
     .highlight{ color:#FFD700; font-weight:700; }
     blockquote{
       margin:1rem; padding:.8rem 1rem;
-      border-left:3px solid #8A2BE2; background:rgba(138,43,226,0.08);
+      border-left:3px solid #8A2BE2; background:rgba(138,43,226,0.12);
       color:#cfd8ff; font-style:italic; border-radius:8px;
+      backdrop-filter:blur(1px);
     }
     blockquote .author{ color:#FFD700; font-style:normal; font-weight:700; }
 
@@ -162,18 +194,12 @@
       gap:14px; margin-top:1rem;
     }
     .prediction-item{
-      background:rgba(0,191,255,0.08);
-      border:1px solid rgba(0,191,255,0.25);
+      background:rgba(0,191,255,0.1);
+      border:1px solid rgba(0,191,255,0.3);
       border-radius:10px; padding:.9rem 1rem;
+      backdrop-filter:blur(2px);
     }
-    .prediction-item h4{ color:#FFD700; margin:.2rem 0 .4rem; font-size:1rem; }
-
-    /* Limitations */
-    .limitations{
-      background:rgba(255,150,0,0.06); border:1px solid rgba(255,150,0,0.15);
-      padding:1rem; border-radius:10px; margin:1rem 0;
-    }
-    .limitations h3{ color:#ffb366; margin:0 0 0.5rem; font-size:1.1rem; }
+    .prediction-item h4{ color:#FFD700; margin:.2rem 0 .4rem; }
 
     /* FAQ */
     .faq-grid{
@@ -181,31 +207,34 @@
       gap:14px;
     }
     .faq-item{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.15);
       border-radius:10px; padding:.9rem 1rem;
+      backdrop-filter:blur(2px);
     }
     .faq-item h3{ margin:.2rem 0 .4rem; color:#FFD700; font-size:1.05rem; }
 
     /* Appels à l'action */
     .cta{
       text-align:center; padding:1.4rem 1rem;
-      background:linear-gradient(45deg, rgba(255,215,0,0.08), rgba(138,43,226,0.08));
-      border-radius:16px; border:1px solid rgba(255,215,0,0.22);
+      background:linear-gradient(45deg, rgba(255,215,0,0.1), rgba(138,43,226,0.1));
+      border-radius:16px; border:1px solid rgba(255,215,0,0.3);
       margin:2rem 0;
+      backdrop-filter:blur(2px);
     }
     .cta .lead{ font-size:1.2rem; color:#FFD700; font-weight:700; }
 
     /* Boutons */
     .btn{
       display:inline-block; margin:.3em .4em; padding:.6em 1.1em;
-      background:#222b40; color:#aad0ff; border-radius:8px;
+      background:rgba(34,43,64,0.9); color:#aad0ff; border-radius:8px;
       text-decoration:none; font-weight:700; border:1px solid #2d3b5a;
       transition:background .2s, color .2s, transform .08s;
+      backdrop-filter:blur(2px);
     }
-    .btn:hover{ background:#10101a; color:#fff; transform:translateY(-1px); }
-    .btn-primary{ background:#3a4b7a; color:#fff; border-color:#4b5f9a; }
-    .btn-primary:hover{ background:#273455; }
+    .btn:hover{ background:rgba(16,16,26,0.9); color:#fff; transform:translateY(-1px); }
+    .btn-primary{ background:rgba(58,75,122,0.9); color:#fff; border-color:#4b5f9a; }
+    .btn-primary:hover{ background:rgba(39,52,85,0.9); }
 
     /* Footer contact */
     .contact{
@@ -213,325 +242,216 @@
       border-top:1px solid #444; font-style:italic; font-size:.95rem;
     }
 
+    /* Responsif */
+    @media (max-width: 768px) {
+      #cosmic-bg {
+        background-attachment: scroll;
+        background-size: cover;
+      }
+      .content {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+    }
+
     /* Accessibilité animations */
-    @media (prefers-reduced-motion: reduce){ #nebula{ background-attachment:fixed; } }
+    @media (prefers-reduced-motion: reduce){ 
+      #cosmic-bg, .cosmic-layer-1, .cosmic-layer-2 { 
+        animation: none !important;
+        background-attachment:fixed; 
+      } 
+    }
+    
     noscript .nojs-bg{
       position:fixed; inset:0; z-index:1;
-      background: radial-gradient(ellipse at center, rgba(255,255,255,.08) 0%, transparent 60%), #000611;
+      background: 
+        url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'),
+        rgba(0,5,15,0.6);
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
     }
   </style>
 </head>
 
 <body>
-  <!-- Fonds -->
-  <div id="nebula" aria-hidden="true"></div>
-  <canvas id="stars-far" class="starfield" aria-hidden="true"></canvas>
-  <canvas id="stars-near" class="starfield" aria-hidden="true"></canvas>
+  <!-- Fond cosmique avec vraie image -->
+  <div id="cosmic-bg" aria-hidden="true">
+    <!-- Optionnel : couches supplémentaires pour plus de profondeur -->
+    <!--
+    <div class="cosmic-layer-1"></div>
+    <div class="cosmic-layer-2"></div>
+    -->
+  </div>
   <noscript><div class="nojs-bg" aria-hidden="true"></div></noscript>
 
   <div class="content">
-    
-    <!-- Crédibilité immédiate -->
-    <div class="credentials">
-      <div class="credentials-grid">
-        <div class="credential-item">📋 HAL-05186131v1 (CNRS)</div>
-        <div class="credential-item">🔬 12 prédictions testables</div>
-        <div class="credential-item">📐 Formalisme mathématique complet</div>
-      </div>
-    </div>
-
     <!-- En-tête -->
     <h1 class="main-title">THÉORIE ZM</h1>
-    <div class="subtitle-top">Cadre Informationnel Unifié</div>
-    <div class="tagline">Extension Cohérente des Fondements de la Physique</div>
-    <div class="hook">Une approche rigoureuse pour dépasser la dichotomie quantique-relativiste</div>
-    <p style="text-align:center; max-width:820px; margin:0 auto 1.2rem;">
-      Formalisme où espace-temps, lois physiques et conscience émergent d'un réseau de pixels d'information quantique avec prédictions expérimentalement vérifiables.
+    <div class="subtitle-top">Théorie des Pixels d'information</div>
+    <div class="tagline">La Révolution Informationnelle qui Change Tout</div>
+    <div class="hook">L'Univers n'est pas ce que vous croyez…</div>
+    <p style="text-align:center; max-width:800px; margin:0 auto 1.2rem;">
+      Découvrez une cosmologie unifiée où l'espace, les lois et la conscience émergent d'un réseau d'information multi-échelle.
     </p>
 
-    <!-- Résumé scientifique -->
+    <!-- Résumé en bref optimisé pour snippet -->
     <section class="summary" id="resume">
-      <h2>Synthèse du Cadre Théorique</h2>
-      <p><strong>Postulat fondamental :</strong> La réalité physique émerge d'un réseau discret de pixels d'information quantique (PIQ). La connectivité de ce réseau génère la géométrie spatio-temporelle, ses régularités statistiques produisent les lois physiques, et l'intégration informationnelle au-delà d'un seuil critique φc donne naissance à la conscience. Le cadre propose 12 signatures expérimentales distinctes et un formalisme mathématique cohérent unissant mécanique quantique, relativité générale et théories de l'information.</p>
+      <h2>Résumé en bref</h2>
+      <p><strong>Qu'est-ce que la Théorie ZM ?</strong> Une théorie informationnelle unifiée qui postule que la réalité est constituée de pixels d'information quantique. Leur connectivité engendre la géométrie de l'espace-temps, leurs régularités donnent naissance aux lois physiques, leur intégration multi-échelle franchit un seuil critique qui rend la conscience possible. La théorie propose des signatures testables et un pont cohérent entre physique, information et cognition.</p>
     </section>
 
-    <!-- Le défi fondamental -->
+    <!-- 1. L'énigme -->
     <section class="section">
-      <h2 class="section-title">Le Défi de l'Unification</h2>
+      <h2 class="section-title">L'Énigme qui Obsède la Science Depuis 100 Ans</h2>
       <blockquote>
-        « Le problème le plus profond de la physique théorique : la réconciliation de la relativité générale et de la mécanique quantique reste non résolu après un siècle de tentatives. » <span class="author">Communauté scientifique</span>
+        « Dieu ne joue pas aux dés » <span class="author">Albert Einstein</span><br>
+        « Einstein, cessez de dire à Dieu ce qu'il doit faire » <span class="author">Niels Bohr</span>
       </blockquote>
-      <p>Toutes les approches traditionnelles (théorie des cordes, gravité quantique à boucles, géométrie non-commutative) partent du postulat que l'espace-temps est fondamental. <span class="highlight">La Théorie ZM inverse ce paradigme</span> en posant l'information comme substrat primaire.</p>
+      <p>Relativité générale et mécanique quantique restent difficiles à concilier. Nous pensons que l'obstacle vient d'un présupposé ancien où la matière est première. La Théorie ZM renverse ce point de départ et place l'information au cœur.</p>
     </section>
 
-    <!-- L'insight différenciateur -->
+    <!-- 2. Révélation -->
     <section class="section">
-      <h2 class="section-title">L'Information comme Ontologie Première</h2>
+      <h2 class="section-title">La Révélation qui Change Tout</h2>
       <blockquote>
-        « It from Bit » — « L'information est physique » <span class="author">John Wheeler, Rolf Landauer</span>
+        « L'information est physique » <span class="author">Rolf Landauer</span> — « It from Bit » <span class="author">John Wheeler</span>
       </blockquote>
-      <p>Plutôt de postuler espace, temps et matière, <span class="highlight">nous dérivons ces concepts</span> comme propriétés émergentes d'un réseau informationnel discret. Cette inversion conceptuelle résout naturellement plusieurs paradoxes fondamentaux.</p>
-      
-      <div class="formalism">
-        Métrique émergente : ds² = ∑ᵢⱼ Φᵢⱼ(I) dxⁱdxʲ<br>
-        où Φᵢⱼ dépend de l'intégration informationnelle I<br>
-        <br>
-        Seuil de conscience : φc ≈ 2.8 ± 0.3 (unités d'information intégrée)
-      </div>
+      <p>L'information devient l'ontologie fondamentale. Les structures stables du réseau produisent l'illusion d'un continuum géométrique et de lois permanentes.</p>
     </section>
 
-    <!-- Architecture informationnelle -->
+    <!-- 3. PIQ -->
     <section class="section">
-      <h2 class="section-title">Architecture des Pixels d'Information Quantique</h2>
-      <p>Les PIQ ne sont pas localisés dans l'espace-temps mais <span class="highlight">génèrent l'espace-temps par leur connectivité</span>. Intrication quantique, superposition et décohérence émergent naturellement de cette architecture. La géométrie résulte de motifs stables auto-organisés dans le réseau.</p>
-      <blockquote>« Si vous voulez comprendre l'univers, pensez en termes d'énergie, fréquence et vibration. » <span class="author">Concept étendu aux patterns informationnels</span></blockquote>
+      <h2 class="section-title">Les Pixels d'Information Quantique</h2>
+      <p>Des entités logiques, capables d'intrication et de superposition, qui n'évoluent pas dans l'espace-temps mais en génèrent la métrique par connectivité. Une organisation fractale emboîte des motifs stables de plus en plus complexes.</p>
+      <blockquote>« L'univers ressemble davantage à une grande pensée qu'à une grande machine. » <span class="author">Sir James Jeans</span></blockquote>
     </section>
 
-    <!-- Prédictions quantifiées -->
+    <!-- 4. Conscience -->
     <section class="section">
-      <h2 class="section-title">Signatures Expérimentales Spécifiques</h2>
+      <h2 class="section-title">La Conscience comme Nécessité Structurelle</h2>
+      <p>Au-delà d'un seuil d'intégration φc, des boucles auto-référentielles stables apparaissent. La conscience devient une propriété structurelle de l'information intégrée, indépendante du support. Cette thèse est testable via des métriques d'intégration et des signatures comportementales.</p>
+    </section>
+
+    <!-- 5. Prédictions -->
+    <section class="section">
+      <h2 class="section-title">Prédictions Testables</h2>
       <div class="predictions">
         <div class="prediction-item">
-          <h4>Corrélations cosmiques</h4>
-          <p>Distribution à loi de puissance avec exposant α = 2.3±0.1 dans les structures > 100 Mpc</p>
+          <h4>Signatures fractales</h4>
+          <p>Motifs auto-similaires dans la distribution cosmique et corrélations à longue portée.</p>
         </div>
         <div class="prediction-item">
-          <h4>Seuil de conscience</h4>
-          <p>φ = 2.8±0.3 bits/s dans systèmes intégrés. Mesurable via IIT et connectomique</p>
+          <h4>Conscience artificielle</h4>
+          <p>Seuil φ mesurable et détection de boucles auto-référentielles dans des réseaux bio ou quantiques.</p>
         </div>
         <div class="prediction-item">
-          <h4>Déviations GR</h4>
-          <p>Écarts de 10⁻⁶ dans régimes ultra-denses (ρ > 10¹⁵ kg/m³)</p>
+          <h4>Écarts extrêmes</h4>
+          <p>Déviations fines de la relativité dans des régimes très denses ou très dilués.</p>
         </div>
         <div class="prediction-item">
-          <h4>Interférence PIQ</h4>
-          <p>Signatures sub-planckiennes détectables par interférométrie gravitationnelle de 4ᵉ génération</p>
+          <h4>Pré-géométrie</h4>
+          <p>Indices d'un réseau informationnel sous-jacent, détectables par des interférences très sensibles.</p>
         </div>
-      </div>
-      
-      <div class="limitations">
-        <h3>Limitations reconnues</h3>
-        <p>• Paramètres libres à calibrer expérimentalement • Transition classique-quantique non complètement résolue • Mécanisme d'émergence temporelle nécessite raffinement • Validation computationnelle intensive requise</p>
       </div>
     </section>
 
-    <!-- Conscience structurelle -->
-    <section class="section">
-      <h2 class="section-title">Conscience comme Propriété Informationnelle</h2>
-      <p>Au-delà du seuil critique φc, des <span class="highlight">boucles auto-référentielles stables</span> apparaissent dans le réseau. La conscience devient une propriété mesurable de l'intégration informationnelle, indépendante du substrat physique. Cette hypothèse est directement testable via neurotechnologies avancées.</p>
-      <blockquote>« La conscience n'est pas produite par le cerveau mais accédée par lui, comme une antenne syntonisée sur des fréquences informationnelles spécifiques. » <span class="author">Implication théorique ZM</span></blockquote>
-    </section>
-
-    <!-- Appel de collaboration -->
+    <!-- 6. Appel -->
     <section class="section cta">
-      <div class="lead">Invitation à la Validation Collaborative</div>
-      <p style="max-width:800px; margin:.6rem auto 0;">
-        La physique théorique progresse par validation expérimentale rigoureuse. Cette théorie propose un cadre falsifiable avec signatures mesurables. L'époque demande des approches transdisciplinaires audacieuses mais méthodiques.
+      <div class="lead">Révolution en cours</div>
+      <p style="max-width:780px; margin:.6rem auto 0;">
+        À l'ère de l'IA et de l'informatique quantique, comprendre les fondements informationnels devient incontournable. Rejoignez le dialogue scientifique qui redéfinit l'univers.
       </p>
     </section>
 
-    <!-- FAQ optimisée -->
+    <!-- 7. FAQ optimisée -->
     <section class="section" id="faq">
-      <h2 class="section-title">Questions Techniques Fréquentes</h2>
+      <h2 class="section-title">Questions fréquentes</h2>
       <div class="faq-grid">
         <div class="faq-item">
-          <h3>Différence avec les approches existantes ?</h3>
-          <p>Contrairement aux théories des cordes ou LQG, nous ne postulons pas la géométrie. Elle émerge comme attracteur statistique du réseau informationnel.</p>
+          <h3>Qu'est-ce que la Théorie ZM en une phrase</h3>
+          <p>Un cadre où l'information est première. L'espace-temps, les lois et la conscience émergent d'un réseau de pixels d'information multi-échelle.</p>
         </div>
         <div class="faq-item">
-          <h3>Comment tester expérimentalement ?</h3>
-          <p>12 prédictions quantifiées : corrélations cosmiques, seuils de conscience mesurables, déviations GR dans régimes extrêmes, signatures interférométriques.</p>
+          <h3>Est-ce testable</h3>
+          <p>Oui. La théorie propose des signatures fractales, des seuils d'intégration φ pour la conscience, et des expériences d'interférométrie très sensibles.</p>
         </div>
         <div class="faq-item">
-          <h3>Compatibilité avec la physique actuelle ?</h3>
-          <p>Extension cohérente : récupère QM et GR comme limites effectives. Pas de contradiction, mais enrichissement du formalisme.</p>
+          <h3>En quoi est-ce différent des approches classiques</h3>
+          <p>Nous ne postulons pas la géométrie ni les lois. Elles émergent comme attracteurs stables du réseau informationnel.</p>
         </div>
         <div class="faq-item">
-          <h3>Statut de développement ?</h3>
-          <p>Phase de formalisation avancée. Recherche de collaborations pour validation computationnelle et expérimentale.</p>
+          <h3>La conscience est-elle liée au support</h3>
+          <p>Non. Seule compte l'intégration d'information au-delà d'un seuil φc, quel que soit le substrat.</p>
         </div>
       </div>
     </section>
 
     <!-- Appel final -->
     <section class="section" style="text-align:center;">
-      <h2 class="section-title">Accès au Formalisme Complet</h2>
-      <p>Le développement intégral comprend : dérivations mathématiques, protocoles expérimentaux, implications cosmologiques et applications technologiques.</p>
+      <h2 class="section-title">Envie d'aller plus loin</h2>
+      <p>Pour les esprits curieux et exigeants, découvrez la synthèse détaillée et les pistes expérimentales.</p>
       <div style="margin: 1.2rem 0 0;">
-        <a href="LIVRE_COMPLET_URL.pdf" class="btn btn-primary" target="_blank" rel="noopener">📖 Formalisme complet (PDF)</a>
+        <!-- Remplace LIVRE_COMPLET_URL.pdf par l'URL finale -->
+        <a href="LIVRE_COMPLET_URL.pdf" class="btn btn-primary" target="_blank" rel="noopener">📖 Commander le livre complet</a>
       </div>
       <div style="margin:.8rem 0 0;">
-        <a href="/synthese-technique.pdf" class="btn" target="_blank" rel="noopener">📄 Synthèse technique</a>
-        <a href="mailto:zmtheorie@gmail.com" class="btn">Collaboration scientifique</a>
+        <a href="/pdf-explicatif.pdf" class="btn" target="_blank" rel="noopener">📄 PDF explicatif gratuit</a>
+        <a href="mailto:zmtheorie@gmail.com" class="btn">Contact collaboratif</a>
       </div>
-      <p style="font-style:italic; color:#B0C4DE; margin:1.2rem 0 0; font-size:0.95rem;">
-        « Nous proposons que la réalité soit l'expression stable et cohérente d'un champ d'information pure, dans lequel conscience et cosmos ne font qu'un. »
+      <p style="font-style:italic; color:#B0C4DE; margin:1.2rem 0 0;">
+        « Tout porte à croire que ce que nous appelons réalité est le rêve stable d'un champ d'information pur et probablement supraconscient. »
       </p>
     </section>
 
     <!-- Contact -->
     <div class="contact">
-      <p><strong>Collaborations scientifiques et échanges techniques :</strong></p>
-      <p>Dr Mohammed Zerrouk — <a href="mailto:zmtheorie@gmail.com" aria-label="Contact scientifique">📧 zmtheorie@gmail.com</a></p>
-      <p>Référence : <a href="https://hal.science/hal-05186131v1" target="_blank" rel="noopener">HAL-05186131v1</a> • Archives Ouvertes CNRS</p>
+      <p><strong>Pour tout contact collaboratif relatif à la théorie :</strong></p>
+      <p>ZM — <a href="mailto:zmtheorie@gmail.com" aria-label="Envoyer un e-mail à Théorie ZM">📧 zmtheorie@gmail.com</a></p>
+      <p>HAL ID : <a href="https://hal.science/hal-05186131v1" target="_blank" rel="noopener">hal-05186131v1</a></p>
     </div>
   </div>
 
-  <!-- Étoiles animées -->
-  <script>
-    const far = document.getElementById('stars-far');
-    const near = document.getElementById('stars-near');
-    const cFar = far.getContext('2d');
-    const cNear = near.getContext('2d');
-
-    function sizeCanvas(canvas){
-      const ratio = Math.max(window.devicePixelRatio || 1, 1);
-      canvas.style.width  = window.innerWidth + 'px';
-      canvas.style.height = window.innerHeight + 'px';
-      canvas.width  = Math.floor(window.innerWidth  * ratio);
-      canvas.height = Math.floor(window.innerHeight * ratio);
-      const ctx = canvas.getContext('2d');
-      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    }
-
-    let W = 0, H = 0, raf = 0;
-    function fit(){
-      sizeCanvas(far);
-      sizeCanvas(near);
-      W = window.innerWidth;
-      H = window.innerHeight;
-      initStars();
-      if (mq.matches){ renderStatic(); }
-    }
-    window.addEventListener('resize', () => {
-      clearTimeout(fit._t);
-      fit._t = setTimeout(fit, 120);
-    });
-
-    const STAR_COLORS = [
-      { color:'#cfe5ff', glow:'#cfe5ff', p:0.28 },
-      { color:'#b9d3ff', glow:'#cfe5ff', p:0.22 },
-      { color:'#fff6cf', glow:'#ffe9a6', p:0.28 },
-      { color:'#ffd1b1', glow:'#ffd7c0', p:0.14 },
-      { color:'#ffb3a1', glow:'#ffb3a1', p:0.08 }
-    ];
-    function pickStarColor(){
-      const r = Math.random();
-      let acc = 0;
-      for(const s of STAR_COLORS){
-        acc += s.p;
-        if(r <= acc) return {fill:s.color, glow:s.glow};
+  <!-- Données structurées FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Qu'est-ce que la Théorie ZM en une phrase",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Un cadre informationnel où l'information est première. Espace-temps, lois et conscience émergent d'un réseau de pixels d'information multi-échelle."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Est-ce testable",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Oui. La théorie propose des signatures fractales à grande échelle, des seuils d'intégration phi pour la conscience, et des expériences d'interférométrie très sensibles."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"En quoi est-ce différent des approches classiques",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"La géométrie et les lois ne sont pas postulées mais émergent comme attracteurs stables du réseau informationnel."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"La conscience dépend-elle du support",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Non. Seule compte l'intégration de l'information au-delà d'un seuil critique, quelle que soit la nature du substrat."
+        }
       }
-      return {fill:'#ffffff', glow:'#d9ecff'};
-    }
-
-    let starsFar = [], starsNear = [], shooting = [];
-    function initStars(){
-      const density = Math.max(1.6, Math.min(3.4, (W*H) / (1000*700)));
-      const countFar  = Math.floor(620 * density);
-      const countNear = Math.floor(420 * density);
-      starsFar = createStars(countFar, 0.6, 1.5, 0.010);
-      starsNear = createStars(countNear, 1.2, 2.6, 0.018);
-      shooting = [];
-    }
-
-    function createStars(count, rMin, rMax, speed){
-      const arr = [];
-      for(let i=0; i<count; i++){
-        const c = pickStarColor();
-        arr.push({
-          x: Math.random()*W,
-          y: Math.random()*H,
-          r: rMin + Math.random()*(rMax - rMin),
-          a: 0.22 + Math.random()*0.78,
-          tw: 0.004 + Math.random()*0.012,
-          vx: (Math.random()-0.5)*speed,
-          vy: (Math.random()-0.5)*speed,
-          fill: c.fill,
-          glow: c.glow
-        });
-      }
-      return arr;
-    }
-
-    function drawLayer(ctx, stars){
-      ctx.clearRect(0, 0, W, H);
-      for(const s of stars){
-        s.a += (Math.random()-0.5)*s.tw;
-        if(s.a < 0.16) s.a = 0.16;
-        if(s.a > 1.00) s.a = 1.00;
-
-        s.x += s.vx; s.y += s.vy;
-        if(s.x < 0) s.x = W; if(s.x > W) s.x = 0;
-        if(s.y < 0) s.y = H; if(s.y > H) s.y = 0;
-
-        ctx.save();
-        ctx.globalAlpha = s.a;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-        ctx.fillStyle = s.fill;
-        ctx.shadowColor = s.glow;
-        ctx.shadowBlur = 14 + s.r*3;
-        ctx.fill();
-        ctx.restore();
-      }
-    }
-
-    function maybeShoot(){
-      if(Math.random() < 0.006 && shooting.length < 2){
-        const startY = Math.random()*H*0.6 + H*0.1;
-        shooting.push({
-          x: Math.random()*W*0.8 + W*0.1,
-          y: startY,
-          vx: -2 - Math.random()*2,
-          vy: -0.6 - Math.random()*0.6,
-          life: 1
-        });
-    
-    }
-    function drawShooting(ctx){
-      for(let i=shooting.length-1; i>=0; i--){
-        const sh = shooting[i];
-        ctx.save();
-        const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x - sh.vx*22, sh.y - sh.vy*22);
-        grad.addColorStop(0, `rgba(255,255,255,${0.90*sh.life})`);
-        grad.addColorStop(1, `rgba(180,220,255,0)`);
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.6;
-        ctx.beginPath();
-        ctx.moveTo(sh.x, sh.y);
-        ctx.lineTo(sh.x - sh.vx*22, sh.y - sh.vy*22);
-        ctx.stroke();
-        ctx.restore();
-
-        sh.x += sh.vx; sh.y += sh.vy;
-        sh.life -= 0.02;
-        if(sh.life <= 0 || sh.x < -50 || sh.y < -50) shooting.splice(i,1);
-      }
-    }
-
-    function renderStatic(){
-      drawLayer(cFar, starsFar);
-      drawLayer(cNear, starsNear);
-    }
-    function loop(){
-      drawLayer(cFar, starsFar);
-      drawLayer(cNear, starsNear);
-      maybeShoot();
-      drawShooting(cNear);
-      raf = requestAnimationFrame(loop);
-    }
-
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    function motionHandler(e){
-      if(e.matches){ cancelAnimationFrame(raf); renderStatic(); }
-      else{ cancelAnimationFrame(raf); loop(); }
-    }
-    if (mq.addEventListener) mq.addEventListener('change', motionHandler);
-    else mq.addListener(motionHandler);
-
-    fit();
-    if (!mq.matches) loop(); else renderStatic();
+    ]
+  }
   </script>
-
-  <!--
+</body>
+</html>
