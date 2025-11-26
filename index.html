@@ -4,17 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information</title>
-<meta name="description" content="La Théorie ZM propose une cosmologie informationnelle unifiée. L'univers est un réseau d'information multi-échelle où émergent géométrie, lois physiques et conscience.">
-
-<!-- Open Graph / Twitter -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Théorie ZM — ZM Théorie">
-<meta property="og:description" content="Une cosmologie informationnelle unifiée : espace-temps, lois physiques et conscience émergent d'un graphe d'information.">
-<meta property="og:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Théorie ZM — ZM Théorie">
-<meta name="twitter:description" content="L'univers comme réseau d'information : lois émergentes, géométrie, conscience.">
-<meta name="twitter:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg">
 
 <style>
 /* Base */
@@ -50,6 +39,11 @@ a:hover { color:#ffd76b; text-shadow:0 0 8px #ffd76b; }
   position:relative; z-index:10; backdrop-filter:blur(8px) saturate(1.2); -webkit-backdrop-filter:blur(8px) saturate(1.2); border:1px solid rgba(255,255,255,0.1);
 }
 
+/* Mini-navigation flottante */
+.nav-float { position:fixed; top:1rem; right:1rem; background:rgba(0,0,0,0.6); padding:.5rem 1rem; border-radius:12px; z-index:20; backdrop-filter:blur(6px); }
+.nav-float a { display:block; margin:.3rem 0; color:#aad0ff; font-weight:700; transition:0.3s; }
+.nav-float a:hover { color:#ffd76b; transform:scale(1.05); }
+
 /* Titres et texte */
 .main-title { text-align:center; font-size:2.2rem; font-weight:800; letter-spacing:.5px; text-shadow:2px 2px 4px rgba(0,0,0,0.8),0 0 20px rgba(0,191,255,0.3);
   background:linear-gradient(45deg,#ffffff,#aad0ff,#ffffff); background-clip:text; -webkit-background-clip:text; color:transparent;
@@ -77,12 +71,20 @@ footer { margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,
 footer a img { vertical-align:middle; }
 
 /* Responsive */
-@media(max-width:600px){ .content{padding:1.5rem 1rem;} .main-title{font-size:1.8rem;} }
+@media(max-width:600px){ .content{padding:1.5rem 1rem;} .main-title{font-size:1.8rem;} .nav-float{top:auto; bottom:1rem; right:1rem; padding:.4rem .8rem;} }
 </style>
 </head>
 <body>
 
 <div id="cosmic-bg" aria-hidden="true"></div>
+
+<!-- Navigation flottante -->
+<nav class="nav-float" aria-label="Navigation des sections">
+  <a href="#resume">Résumé</a>
+  <a href="#details">Détails</a>
+  <a href="#applications">Applications</a>
+  <a href="#publications">Publications</a>
+</nav>
 
 <div class="content" role="main">
   <header>
