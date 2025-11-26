@@ -1,235 +1,149 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="Hph_EoL7q-XHXSRWwijiGyxshOpkYYT5bCRxTyjdQjw">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information</title>
+<meta name="description" content="La Théorie ZM propose une cosmologie informationnelle unifiée. L'univers est un réseau d'information multi-échelle où émergent géométrie, lois physiques et conscience.">
 
-  <!-- Métadonnées -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="theme-color" content="#0a0f20">
-  <link rel="canonical" href="https://zm-theory.github.io/">
-  <meta name="language" content="fr">
-  <meta name="author" content="Mohammed Zerrouk">
-  <title>Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information</title>
-  <meta name="description" content="La Théorie ZM propose une cosmologie informationnelle unifiée. L'univers est un réseau d'information multi-échelle où émergent géométrie, lois physiques et conscience. Découvrez une nouvelle vision du cosmos, du Big Bang à la physique quantique.">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Théorie ZM — ZM Théorie">
+<meta property="og:description" content="Une cosmologie informationnelle unifiée : espace-temps, lois physiques et conscience émergent d'un graphe d'information.">
+<meta property="og:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Théorie ZM — ZM Théorie">
+<meta name="twitter:description" content="L'univers comme réseau d'information : lois émergentes, géométrie, conscience.">
+<meta name="twitter:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg">
 
-  <!-- Open Graph -->
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:site_name" content="Théorie ZM">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://zm-theory.github.io/">
-  <meta property="og:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information">
-  <meta property="og:description" content="Une cosmologie informationnelle unifiée : espace-temps, lois physiques et conscience émergent d'un graphe d'information. De nouvelles perspectives sur l'univers, le Big Bang et la physique quantique.">
-  <meta property="og:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg">
-  <meta property="og:image:alt" content="Illustration cosmique de la Théorie ZM sur fond étoilé et réseau d'information">
+<style>
+/* Base */
+html { scroll-behavior: smooth; }
+body { margin:0; padding:0; font-family:"Georgia", serif; background:#000; color:#f2f2f2; line-height:1.7; overflow-x:hidden; }
+a { color:#aad0ff; text-decoration:none; transition: 0.3s; }
+a:hover { color:#ffd76b; text-shadow:0 0 8px #ffd76b; }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Théorie ZM — ZM Théorie, une nouvelle vision de l'Univers fondée sur l'information">
-  <meta name="twitter:description" content="L'univers comme réseau d'information : lois émergentes, géométrie, conscience. Une nouvelle approche du cosmos et de la physique quantique.">
-  <meta name="twitter:image" content="https://zm-theory.github.io/images/og-theoriezm.jpg">
+/* Fond cosmique */
+#cosmic-bg { position:fixed; inset:0; z-index:0; pointer-events:none;
+  background: radial-gradient(circle, rgba(0,0,0,0.3), rgba(5,10,25,0.7)),
+              url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+  background-size:cover; background-position:center; background-attachment:fixed;
+  animation: cosmicDrift 180s ease-in-out infinite alternate;
+}
+#cosmic-bg::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+  background: url('https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80');
+  background-size:120% auto; background-position:20% 30%; opacity:0.4;
+  mix-blend-mode: screen; animation: galaxyRotation 300s linear infinite;
+}
+#cosmic-bg::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%;
+  background:url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2013&q=80');
+  background-size:cover; background-position:center; opacity:0.6; mix-blend-mode: lighten;
+  animation: starField 240s ease-in-out infinite alternate-reverse;
+}
+@keyframes cosmicDrift {0%{transform:scale(1) translate(0,0) rotate(0deg);}50%{transform:scale(1.05) translate(-1%,1%) rotate(0.2deg);}100%{transform:scale(1.08) translate(-2%,-1%) rotate(-0.1deg);}}
+@keyframes galaxyRotation {0%{transform:scale(1) rotate(0deg);opacity:0.4;}50%{transform:scale(1.1) rotate(0.5deg);opacity:0.5;}100%{transform:scale(1) rotate(1deg);opacity:0.3;}}
+@keyframes starField {0%{transform:scale(1) translate(0,0);opacity:0.6;}100%{transform:scale(1.03) translate(1%,-0.5%);opacity:0.8;}}
 
-  <!-- Icônes -->
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+/* Contenu principal */
+.content { max-width:960px; margin:0 auto; padding:2rem 2.5rem;
+  background:rgba(8,12,20,0.92); border-radius:16px; box-shadow:0 0 60px 10px rgba(0,0,0,0.8), inset 0 0 40px rgba(255,255,255,0.05);
+  position:relative; z-index:10; backdrop-filter:blur(8px) saturate(1.2); -webkit-backdrop-filter:blur(8px) saturate(1.2); border:1px solid rgba(255,255,255,0.1);
+}
 
-  <!-- Styles -->
-  <style>
-    /* Reset et base */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: "Georgia", serif;
-      background: #000;
-      color: #f2f2f2;
-      line-height: 1.7;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
+/* Titres et texte */
+.main-title { text-align:center; font-size:2.2rem; font-weight:800; letter-spacing:.5px; text-shadow:2px 2px 4px rgba(0,0,0,0.8),0 0 20px rgba(0,191,255,0.3);
+  background:linear-gradient(45deg,#ffffff,#aad0ff,#ffffff); background-clip:text; -webkit-background-clip:text; color:transparent;
+  animation:titleGlow 4s ease-in-out infinite alternate;
+}
+@keyframes titleGlow {0%{text-shadow:2px 2px 4px rgba(0,0,0,0.8),0 0 20px rgba(0,191,255,0.3);}100%{text-shadow:2px 2px 4px rgba(0,0,0,0.8),0 0 30px rgba(255,215,0,0.4);}}
+.subtitle-top { text-align:center; font-size:1.1rem; color:#aad0ff; font-style:italic; margin-bottom:.25rem; text-shadow:1px 1px 2px rgba(0,0,0,0.8),0 0 10px rgba(170,208,255,0.3);}
+.tagline { text-align:center; font-size:1.2rem; color:#ffd76b; font-weight:700; margin:.5rem 0 1.2rem; text-shadow:1px 1px 2px rgba(0,0,0,0.8),0 0 15px rgba(255,215,107,0.4);}
+.hook { text-align:center; font-size:1.15rem; color:#E6E6FA; margin-bottom:1.2rem; text-shadow:1px 1px 2px rgba(0,0,0,0.8);}
+.intro-text { text-align:center; max-width:800px; margin:0 auto 1.2rem; opacity:0; transform:translateY(20px); transition:all 1s ease-out; }
 
-    /* Fond cosmique */
-    #cosmic-bg {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(5,10,25,0.7) 100%),
-        url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      animation: cosmicDrift 180s ease-in-out infinite alternate;
-    }
-    #cosmic-bg::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80');
-      background-size: 120% auto;
-      background-position: 20% 30%;
-      opacity: 0.4;
-      mix-blend-mode: screen;
-      animation: galaxyRotation 300s linear infinite;
-    }
-    #cosmic-bg::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2013&q=80');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.6;
-      mix-blend-mode: lighten;
-      animation: starField 240s ease-in-out infinite alternate-reverse;
-    }
+/* Sections */
+section { margin:3rem 0; opacity:0; transform:translateY(30px); transition: all 1s ease-out; }
+section.in-view { opacity:1; transform:translateY(0); }
+section h2 { font-size:1.8rem; margin-bottom:1rem; color:#aad0ff; text-align:center; text-shadow:1px 1px 2px rgba(0,0,0,0.7); transition: all 0.5s ease;}
+section h2:hover { text-shadow:0 0 20px #ffd76b; color:#ffd76b; }
+section p { margin-bottom:1rem; line-height:1.6; }
 
-    @keyframes cosmicDrift {
-      0% { transform: scale(1) translate(0, 0) rotate(0deg); filter: hue-rotate(0deg) brightness(1); }
-      50% { transform: scale(1.05) translate(-1%, 1%) rotate(0.2deg); filter: hue-rotate(5deg) brightness(1.1); }
-      100% { transform: scale(1.08) translate(-2%, -1%) rotate(-0.1deg); filter: hue-rotate(-3deg) brightness(0.95); }
-    }
-    @keyframes galaxyRotation {
-      0% { transform: scale(1) rotate(0deg); opacity: 0.4; }
-      50% { transform: scale(1.1) rotate(0.5deg); opacity: 0.5; }
-      100% { transform: scale(1) rotate(1deg); opacity: 0.3; }
-    }
-    @keyframes starField {
-      0% { transform: scale(1) translate(0, 0); opacity: 0.6; }
-      100% { transform: scale(1.03) translate(1%, -0.5%); opacity: 0.8; }
-    }
+/* Mini-badges Applications */
+.badge { display:inline-block; padding:.3rem .6rem; margin:.3rem; border-radius:6px; background:linear-gradient(45deg,#00c6ff,#0072ff); color:#fff; font-weight:700; text-shadow:0 0 2px #000; transition:0.3s;}
+.badge:hover { transform:scale(1.1); box-shadow:0 0 10px #00c6ff; }
 
-    /* Contenu principal */
-    .content {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 2.5rem;
-      background: rgba(8, 12, 20, 0.92);
-      border-radius: 16px; 
-      box-shadow: 0 0 60px 10px rgba(0,0,0,0.8), inset 0 0 40px rgba(255,255,255,0.05);
-      position: relative;
-      z-index: 10;
-      backdrop-filter: blur(8px) saturate(1.2);
-      -webkit-backdrop-filter: blur(8px) saturate(1.2);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
+/* Footer */
+footer { margin-top:2rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,0.2); font-style:italic; font-size:.95rem; text-align:center; }
+footer a img { vertical-align:middle; }
 
-    /* Titres et texte */
-    .main-title {
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: .5px; 
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,191,255,0.3);
-      background: linear-gradient(45deg, #ffffff, #aad0ff, #ffffff);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      animation: titleGlow 4s ease-in-out infinite alternate;
-    }
-    @keyframes titleGlow {
-      0% { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px rgba(0,191,255,0.3); }
-      100% { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 30px rgba(255,215,0,0.4); }
-    }
-    .subtitle-top {
-      text-align: center;
-      font-size: 1.1rem;
-      color: #aad0ff;
-      font-style: italic;
-      margin-bottom: .25rem; 
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.8), 0 0 10px rgba(170,208,255,0.3);
-    }
-    .tagline {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #ffd76b;
-      font-weight: 700;
-      margin: .5rem 0 1.2rem; 
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.8), 0 0 15px rgba(255,215,107,0.4);
-    }
-    .hook {
-      text-align: center;
-      font-size: 1.15rem;
-      color: #E6E6FA;
-      margin-bottom: 1.2rem; 
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-    }
-    .intro-text {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 1.2rem;
-    }
-
-    /* Section résumé */
-    .summary h2 {
-      margin-bottom: .8rem;
-    }
-
-    /* Contact */
-    .contact {
-      margin-top: 2rem;
-      padding-top: 1.2rem;
-      border-top: 1px solid rgba(255,255,255,0.2); 
-      font-style: italic;
-      font-size: .95rem;
-    }
-
-    a {
-      color: #aad0ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+/* Responsive */
+@media(max-width:600px){ .content{padding:1.5rem 1rem;} .main-title{font-size:1.8rem;} }
+</style>
 </head>
-
 <body>
-  <!-- Fond cosmique -->
-  <div id="cosmic-bg" aria-hidden="true"></div>
-  <noscript><div class="nojs-bg" aria-hidden="true"></div></noscript>
 
-  <div class="content" role="main">
-    <header>
-      <h1 class="main-title">THÉORIE ZM</h1>
-      <div class="subtitle-top">Théorie des Pixels d'information</div>
-      <div class="tagline">La Révolution Informationnelle qui Change Tout</div>
-      <div class="hook">L'Univers n'est pas ce que vous croyez…</div>
-      <p class="intro-text">
-        Découvrez une cosmologie unifiée où l'espace, les lois et la conscience émergent d'un réseau d'information multi-échelle.
-      </p>
-    </header>
+<div id="cosmic-bg" aria-hidden="true"></div>
 
-    <section class="summary" id="resume">
-      <h2>Résumé en bref</h2>
-      <p><strong>Qu'est-ce que la Théorie ZM ?</strong> Une théorie informationnelle unifiée qui postule que la réalité est constituée de pixels d'information quantique. Leur connectivité engendre la géométrie de l'espace-temps, leurs régularités donnent naissance aux lois physiques, leur intégration multi-échelle franchit un seuil critique qui rend la conscience possible. La théorie propose des signatures testables et un pont cohérent entre physique, information et cognition.</p>
-    </section>
+<div class="content" role="main">
+  <header>
+    <h1 class="main-title">THÉORIE ZM</h1>
+    <div class="subtitle-top">Théorie des Pixels d'information</div>
+    <div class="tagline">La Révolution Informationnelle qui Change Tout</div>
+    <div class="hook">L'Univers n'est pas ce que vous croyez…</div>
+    <p class="intro-text">Découvrez une cosmologie unifiée où l'espace, les lois et la conscience émergent d'un réseau d'information multi-échelle.</p>
+  </header>
 
-    <!-- Sections suivantes à ajouter ici -->
+  <section id="resume">
+    <h2>Résumé en bref</h2>
+    <p><strong>Qu'est-ce que la Théorie ZM ?</strong> Une théorie informationnelle unifiée qui postule que la réalité est constituée de pixels d'information quantique. Leur connectivité engendre la géométrie de l'espace-temps, leurs régularités donnent naissance aux lois physiques, et leur intégration multi-échelle rend la conscience possible.</p>
+  </section>
 
-    <footer>
-      <div class="contact">
-        <p><strong>Pour tout contact collaboratif relatif à la théorie :</strong></p>
-        <p>ZM — <a href="mailto:zmtheorie@gmail.com" aria-label="Envoyer un e-mail à Théorie ZM">📧 zmtheorie@gmail.com</a></p>
-        <p>HAL ID : hal-05186131</p>
-        <a href="https://doi.org/10.17605/OSF.IO/N3KV9" target="_blank" rel="noopener noreferrer" aria-label="DOI repository Théorie ZM">
-          <img src="https://img.shields.io/badge/DOI-10.17605%2FOSF.IO%2FN3KV9-blue.svg" alt="DOI badge">
-        </a>
-      </div>
-    </footer>
-  </div>
+  <section id="details">
+    <h2>Détails de la Théorie ZM</h2>
+    <p>Chaque pixel d'information peut interagir avec d'autres à différentes échelles, formant un réseau fractal. Les motifs émergents expliquent la géométrie de l'univers et la cohérence des lois physiques.</p>
+    <p>La théorie fournit des prédictions testables : signatures dans le rayonnement cosmique, relations d'entropie/information, limites de la conscience émergente.</p>
+  </section>
+
+  <section id="applications">
+    <h2>Applications et Perspectives</h2>
+    <p>Conceptualisation de nouvelles technologies basées sur l'information et la physique quantique.</p>
+    <div>
+      <span class="badge">IA Quantique</span>
+      <span class="badge">Systèmes Complexes</span>
+      <span class="badge">Simulation Cosmique</span>
+      <span class="badge">Neurosciences</span>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications et Références</h2>
+    <p>Pour consulter les travaux publiés : <a href="https://doi.org/10.17605/OSF.IO/N3KV9" target="_blank" rel="noopener noreferrer">DOI Théorie ZM</a></p>
+  </section>
+
+  <footer>
+    <p><strong>Pour tout contact collaboratif relatif à la théorie :</strong></p>
+    <p>ZM — <a href="mailto:zmtheorie@gmail.com">📧 zmtheorie@gmail.com</a></p>
+    <p>HAL ID : hal-05186131</p>
+    <a href="https://doi.org/10.17605/OSF.IO/N3KV9" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/DOI-10.17605%2FOSF.IO%2FN3KV9-blue.svg" alt="DOI badge">
+    </a>
+  </footer>
+</div>
+
+<script>
+// Animation scroll-in
+function revealOnScroll() {
+  const sections = document.querySelectorAll('section, .intro-text');
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      section.classList.add('in-view');
+    }
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
 </body>
 </html>
